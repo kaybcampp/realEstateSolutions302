@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
 }
 
 /* Floating Header/Nav Bar */
@@ -12,32 +13,36 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #333333; /* Charcoal background */
     padding: 1rem 0;
-    text-align: center;
     z-index: 1000;
 }
 
 nav ul {
+    display: flex;
+    justify-content: space-around;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    flex-grow: 1;
+    text-align: center;
 }
 
 nav ul li a {
-    color: white;
+    color: #C0B283; /* Champagne text color */
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Hover effect: Color change and deep shadow */
 nav ul li a:hover {
-    color: #28a745;
+    color: #D4AF37; /* Gold hover effect */
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Deep shadow for the "pop-off" effect */
 }
 
 /* Adding padding-top to sections so they don’t hide behind the nav bar */
@@ -48,13 +53,11 @@ section {
 
 /* Hero Section */
 .hero {
-    background-image: url('https://via.placeholder.com/1920x1080');
-    background-size: cover;
-    background-position: center;
-    color: white;
+    background-color: #333333; /* Charcoal hero background */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 150px 20px;
-    margin-top: 60px; /* Adjust to prevent hero from hiding behind nav */
+    margin-top: 60px;
 }
 
 .hero-content h1 {
@@ -67,8 +70,8 @@ section {
 }
 
 .btn {
-    background-color: #28a745;
-    color: white;
+    background-color: #D4AF37; /* Gold button */
+    color: #000000; /* Black text on button */
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -76,13 +79,23 @@ section {
 }
 
 .btn:hover {
-    background-color: #218838;
+    background-color: #C0B283; /* Champagne hover effect */
+    color: #000000;
 }
 
 /* Section Spacing */
 .section {
+    background-color: #000000; /* Black section background */
     padding: 50px 20px;
     text-align: center;
+}
+
+.section h2 {
+    color: #D4AF37; /* Gold headings */
+}
+
+.section p {
+    color: #FFFFFF; /* White text */
 }
 
 /* Listings Grid */
@@ -98,10 +111,16 @@ section {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    border: 2px solid #C0B283; /* Champagne border */
 }
 
 .listing-item h3 {
+    color: #D4AF37; /* Gold titles */
     margin-top: 10px;
+}
+
+.listing-item p {
+    color: #FFFFFF; /* White price text */
 }
 
 /* Contact Form */
@@ -110,46 +129,109 @@ form {
     margin: 0 auto;
 }
 
-form label, form input, form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+form label {
+    color: #D4AF37; /* Gold labels */
 }
 
 form input, form textarea {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #C0B283; /* Champagne borders */
+    background-color: #333333; /* Charcoal background for inputs */
+    color: #FFFFFF; /* White input text */
 }
 
 button {
-    background-color: #007bff;
-    color: white;
+    background-color: #D4AF37; /* Gold button */
+    color: #000000; /* Black text */
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #C0B283; /* Champagne hover */
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #333333; /* Charcoal footer */
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 20px;
 }
 
-/* Make the site mobile-responsive */
+/* Customize the menu for mobile */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     nav ul li {
-        display: block;
         margin: 10px 0;
     }
 
     .listings-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #C0B283; /* Champagne text color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.dropdown:hover .dropbtn {
+    color: #D4AF37; /* Gold hover */
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8); /* Deep shadow hover */
+}
+
+/* Rounded Dropdown Content with Top Offset */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333333; /* Charcoal background */
+    min-width: 160px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.8), 0px 12px 24px rgba(0, 0, 0, 0.6); /* Deep shadow for "hovering" effect */
+    z-index: 100; /* Ensure it's on top of everything */
+    top: 100%; /* Move dropdown below the text */
+    margin-top: 2px; /* Add extra space below the Listings text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow effects */
+}
+
+/* Hover Effect for the Dropdown */
+.dropdown-content:hover {
+    transform: translateY(-5px); /* Slight upward movement to enhance floating effect */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.9), 0px 18px 30px rgba(0, 0, 0, 0.7); /* Make shadow deeper on hover */
+}
+
+.dropdown-content a {
+    color: #C0B283; /* Champagne text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px; /* Rounded corners for the links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #000000; /* Black hover effect */
+    color: #D4AF37; /* Gold hover text */
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
