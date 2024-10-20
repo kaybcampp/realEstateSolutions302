@@ -16,7 +16,10 @@ header {
     background-color: #333333; /* Charcoal background */
     padding: 1rem 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for separation */
 }
+
+/* Additional styles remain the same */
 
 nav ul {
     display: flex;
