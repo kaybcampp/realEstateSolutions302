@@ -30,7 +30,6 @@ header.expanded {
 }
 
 header .hamburger {
-    display: block;
     cursor: pointer;
     margin-bottom: 20px;
 }
@@ -40,30 +39,23 @@ header .hamburger div {
     height: 4px;
     background-color: #2a3b5f;
     margin: 5px 0;
-    transition: transform 0.3s ease;
-}
-
-nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-}
-
-header.expanded nav {
-    display: flex;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width: 100%;
     text-align: center;
+    display: none;
+}
+
+header.expanded nav ul {
+    display: block;
 }
 
 nav ul li {
     margin: 15px 0;
+    position: relative;
 }
 
 nav ul li a {
@@ -78,11 +70,33 @@ nav ul li a:hover {
     color: #1f2a4d;
 }
 
-/* Section Padding for Left Sidebar */
-section {
-    padding: 100px 20px;
-    text-align: center;
-    margin-left: 80px;
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #2a3b5f;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #1f2a4d;
+    background-color: #f0f0f0;
 }
 
 /* Hero Section with Carousel */
@@ -104,12 +118,11 @@ section {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Place behind hero content */
+    z-index: 1; /* Places carousel beneath hero content */
 }
 
 .carousel-slides {
     display: flex;
-    position: relative;
     width: 100%;
     height: 100%;
 }
@@ -117,15 +130,30 @@ section {
 .carousel-slides img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Keeps the aspect ratio without distorting the image */
+    object-fit: cover; /* Ensures image fills without distortion */
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centers the image within the container */
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 1s ease;
 }
 
+.carousel-slides img:first-child {
+    opacity: 1; /* Initial visibility for first image */
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background to improve text readability */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 .hero-content h1 {
     font-size: 48px;
@@ -153,15 +181,21 @@ section {
     transform: translateY(-2px);
 }
 
-/* Business Card Section */
+/* About Section */
+.section {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
 .business-card {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
     padding: 30px;
-    margin: 20px auto;
     max-width: 800px;
+    margin: 0 auto;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -172,11 +206,6 @@ section {
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.card-image {
-    position: relative;
-    text-align: center;
-}
-
 .card-image img {
     width: 150px;
     height: 150px;
@@ -185,23 +214,17 @@ section {
     border: 3px solid #2a3b5f;
 }
 
-/* Social Media Icons */
 .social-media {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     margin-top: 10px;
 }
 
-.social-media a {
-    display: inline-block;
-    text-decoration: none;
-}
-
 .social-media a img {
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
     outline: none;
     border: none;
     background: transparent;
@@ -210,7 +233,6 @@ section {
 
 .social-media a img:hover {
     transform: scale(1.1);
-    box-shadow: 0px 4px 10px rgba(42, 59, 95, 0.6);
 }
 
 .card-info {
@@ -218,122 +240,22 @@ section {
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
 }
 
-.card-description {
-    margin-top: 15px;
-    color: #666666;
-}
-
-.card-description ul {
-    margin: 10px 0;
-    padding-left: 20px;
-    color: #333333;
-}
-
-.card-description ul li {
-    list-style-type: disc;
-}
-
-/* Contact Info */
-.contact-info {
-    text-align: left;
-    margin-top: 20px;
-    color: #333333;
-}
-
-.contact-info p {
-    margin: 5px 0;
-    font-size: 18px;
-}
-
-/* Signature Image */
 .signature {
-    width: 150px;
+    width: 175px; /* Adjusted size */
     margin-top: 20px;
     align-self: flex-end;
     display: block;
 }
 
 /* Section Spacing */
-.section {
-    background-color: #f7f7f7;
-    padding: 50px 20px;
-    text-align: center;
-}
-
 .section h2 {
     color: #2a3b5f;
 }
 
 .section p {
     color: #333333;
-}
-
-/* Listings Grid */
-.listings-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.listing-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #2a3b5f;
-    transition: transform 0.3s ease;
-}
-
-.listing-item img:hover {
-    transform: scale(1.05);
-}
-
-.listing-item h3 {
-    color: #2a3b5f;
-    margin-top: 10px;
-}
-
-.listing-item p {
-    color: #333333;
-}
-
-/* Contact Form */
-form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-form label {
-    color: #2a3b5f;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #2a3b5f;
-    background-color: #ffffff;
-    color: #333333;
-}
-
-button {
-    background-color: #2a3b5f;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background-color: #1f2a4d;
-    transform: translateY(-2px);
 }
 
 /* Footer */
@@ -352,30 +274,4 @@ footer {
         justify-content: center;
         align-items: center;
     }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .listings-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Dropdown Menu */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }

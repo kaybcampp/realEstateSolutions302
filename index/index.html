@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Solutions 302 - Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Floating Navigation Bar with Hamburger Icon -->
+    <header>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li class="dropdown">
+                    <a href="listings.html" class="dropbtn">Listings</a>
+                    <div class="dropdown-content">
+                        <a href="available-homes.html">Available Homes</a>
+                        <a href="sold-homes.html">Sold Homes</a>
+                    </div>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero">
+        <div class="carousel-container">
+            <div class="carousel-slides">
+                <img src="images/c24.webp" alt="Carousel Image 1">
+                <!-- Add more images as needed for the carousel -->
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Welcome to Real Estate Solutions 302</h1>
+            <p>Delaware's Finest Properties, Tailored for You</p>
+            <a href="listings.html" class="btn">View Listings</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section">
+        <h2>Your Real Estate Expert</h2>
+        <div class="business-card">
+            <div class="card-image">
+                <img src="images/kesiaCampbell.webp" alt="Kesia Campbell, Realtor Headshot">
+                <div class="social-media">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="images/icons8-instagram-48.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="images/icons8-facebook-48.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+            <div class="card-info">
+                <div class="card-description">
+                    <p><strong>Kesia Campbell - Your Trusted REALTOR® in Delaware</strong></p>
+                    <p>With over 14 years in Delaware’s real estate market, I bring a wealth of experience in guiding Buyers, Sellers, and Investors. Formerly with Berkshire Hathaway and now proud to represent COMPASS RE, I’m here to make your real estate journey seamless, informed, and rewarding.</p>
+                    <ul>
+                        <li>Licensed REALTOR® in Delaware</li>
+                        <li>Specializes in luxury homes & investments</li>
+                        <li>Dedicated to exceptional service and client success</li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <p><strong>Phone:</strong> (302) 494-6075</p>
+                    <p><strong>Email:</strong> kesia.campbell@compass.com</p>
+                </div>
+                <img class="signature" src="images/signature (1).png" alt="Digital Signature">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('header').classList.toggle('expanded');
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slides img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize first slide as visible on page load
+        showSlide(currentSlide);
+
+        // Change slide every 3 seconds
+        setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html>
