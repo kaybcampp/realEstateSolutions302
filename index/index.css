@@ -218,11 +218,41 @@ nav ul li a:hover {
     flex-direction: column;
 }
 
+.card-title {
+    text-align: center; /* Center the title */
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .signature {
     width: 175px;
     margin-top: 20px;
     align-self: flex-end;
     display: block;
+}
+
+.contact-button {
+    margin-top: auto; /* Push the button to the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the button horizontally */
+}
+
+.btn-blue {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a3b5f; /* Matches site theme */
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-blue:hover {
+    background-color: #1f2a4d; /* Slightly darker on hover */
 }
 
 /* Footer */
