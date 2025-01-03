@@ -7,17 +7,12 @@
     <link rel="stylesheet" href="reviews.css">
 </head>
 <body>
-    <!-- Floating Navigation Bar with Hamburger Icon -->
-    <header style="z-index: 1000;">
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <!-- Top Navigation Bar -->
+    <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Me</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About Me</a></li>
                 <li class="dropdown">
                     <a href="listings.html" class="dropbtn">Listings</a>
                     <div class="dropdown-content">
@@ -25,113 +20,48 @@
                         <a href="sold-homes.html">Sold Homes</a>
                     </div>
                 </li>
-                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Page Title -->
-    <div class="page-title" style="z-index: 500;">
-        Customer Reviews
-        <a href="contact.html" class="cta-button">Join Homeownership!</a>
-    </div>
-
     <!-- Reviews Section -->
     <main class="board">
-        <!-- Pinned Review 1 -->
-        <div class="pinned-review" onclick="openModal('modal-1')">
-            <div class="image-container">
-                <img src="../images/r1 (2).jpg" alt="Review 1 Image">
-                <div class="overlay"><span>Meet John & Jane Doe</span></div>
-            </div>
-            <p>"Kesia was amazing! She helped us find our dream home effortlessly."</p>
-            <span>- John & Jane Doe</span>
+        <!-- Review 1 -->
+        <div class="pinned-review">
+            <p>"Kesia was fantastic! She made the home-buying process stress-free and enjoyable."</p>
+            <span>- John Doe</span>
         </div>
 
-        <div id="modal-1" class="modal">
-            <button class="close-btn" onclick="closeModal('modal-1')">&times;</button>
-            <div class="modal-content">
-                <img src="../images/r1 (2).jpg" alt="Review 1 Image">
-                <p>"Kesia was amazing! She helped us find our dream home effortlessly."</p>
-                <span>- John & Jane Doe</span>
-            </div>
+        <!-- Review 2 -->
+        <div class="pinned-review">
+            <p>"I can’t thank Kesia enough for her dedication and professionalism."</p>
+            <span>- Jane Smith</span>
         </div>
 
-        <!-- Pinned Review 2 -->
-        <div class="pinned-review" onclick="openModal('modal-2')">
-            <div class="image-container">
-                <img src="../images/r1 (3).jpg" alt="Review 2 Image">
-                <div class="overlay"><span>Meet Alex Smith</span></div>
-            </div>
-            <p>"Professional and knowledgeable. Highly recommend her services!"</p>
-            <span>- Alex Smith</span>
+        <!-- Review 3 -->
+        <div class="pinned-review">
+            <p>"Kesia is the best realtor we’ve ever worked with. Highly recommend her services!"</p>
+            <span>- The Johnson Family</span>
         </div>
 
-        <div id="modal-2" class="modal">
-            <button class="close-btn" onclick="closeModal('modal-2')">&times;</button>
-            <div class="modal-content">
-                <img src="../images/r1 (3).jpg" alt="Review 2 Image">
-                <p>"Professional and knowledgeable. Highly recommend her services!"</p>
-                <span>- Alex Smith</span>
-            </div>
+        <!-- Review 4 -->
+        <div class="pinned-review">
+            <p>"She went above and beyond to ensure our needs were met."</p>
+            <span>- Alex Brown</span>
         </div>
 
-        <!-- Pinned Review 3 -->
-        <div class="pinned-review" onclick="openModal('modal-3')">
-            <div class="image-container">
-                <img src="../images/r1 (7).jpg" alt="Review 3 Image">
-                <div class="overlay"><span>Meet Maria Lopez</span></div>
-            </div>
-            <p>"The entire process was seamless, thanks to Kesia's expertise."</p>
+        <!-- Review 5 -->
+        <div class="pinned-review">
+            <p>"Working with Kesia was an absolute pleasure from start to finish."</p>
             <span>- Maria Lopez</span>
-        </div>
-
-        <div id="modal-3" class="modal">
-            <button class="close-btn" onclick="closeModal('modal-3')">&times;</button>
-            <div class="modal-content">
-                <img src="../images/r1 (7).jpg" alt="Review 3 Image">
-                <p>"The entire process was seamless, thanks to Kesia's expertise."</p>
-                <span>- Maria Lopez</span>
-            </div>
-        </div>
-
-        <!-- Pinned Review 4 -->
-        <div class="pinned-review" onclick="openModal('modal-4')">
-            <div class="image-container">
-                <img src="../images/r1 (9).jpg" alt="Review 4 Image">
-                <div class="overlay"><span>Meet Chris and Pat Brown</span></div>
-            </div>
-            <p>"We couldn't have asked for a better realtor. Kesia went above and beyond."</p>
-            <span>- Chris and Pat Brown</span>
-        </div>
-
-        <div id="modal-4" class="modal">
-            <button class="close-btn" onclick="closeModal('modal-4')">&times;</button>
-            <div class="modal-content">
-                <img src="../images/r1 (9).jpg" alt="Review 4 Image">
-                <p>"We couldn't have asked for a better realtor. Kesia went above and beyond."</p>
-                <span>- Chris and Pat Brown</span>
-            </div>
         </div>
     </main>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector('header').classList.toggle('expanded');
-        }
-
-        function openModal(id) {
-            document.body.classList.add('modal-active');
-            document.getElementById(id).classList.add('active');
-            document.querySelector('.board').classList.add('blur-background');
-        }
-
-        function closeModal(id) {
-            document.body.classList.remove('modal-active');
-            document.getElementById(id).classList.remove('active');
-            document.querySelector('.board').classList.remove('blur-background');
-        }
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

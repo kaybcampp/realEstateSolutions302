@@ -46,7 +46,8 @@ nav ul li a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
     color: #ffffff;
     background-color: #2a3b5f;
     border-radius: 5px;
@@ -66,7 +67,11 @@ nav ul li a:hover {
     z-index: 10;
 }
 
-.dropdown .dropdown-content a {
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
     display: block;
     padding: 10px;
     text-decoration: none;
@@ -75,13 +80,9 @@ nav ul li a:hover {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dropdown .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #2a3b5f;
     color: #ffffff;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* Hero Section */
