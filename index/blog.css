@@ -1,0 +1,258 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full page layout */
+}
+
+/* Top Navigation Bar */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 2px solid #2a3b5f;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2a3b5f;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a.active {
+    color: #ffffff;
+    background-color: #2a3b5f;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    background-color: #2a3b5f;
+    border-radius: 5px;
+}
+
+/* Submenu Styles */
+.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #2a3b5f;
+    border-radius: 5px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #2a3b5f;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #2a3b5f;
+    color: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #2a3b5f;
+    color: #ffffff;
+}
+
+/* Blog Posts */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.blog-post {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Fixed height for better control */
+    object-fit: cover;
+    object-position: center; /* Ensures the image remains centered */
+}
+
+.blog-post h2 {
+    font-size: 24px;
+    margin: 15px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    margin: 0 15px 15px;
+}
+
+.blog-post a {
+    display: inline-block;
+    margin: 0 15px 15px;
+    color: #2a3b5f;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #2a3b5f;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.blog-post a:hover {
+    background-color: #2a3b5f;
+    color: #ffffff;
+}
+
+/* Blog Article */
+.blog-article {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centers the article */
+    max-width: 800px; /* Limits the width */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-article img {
+    width: 40%; /* Image is smaller and aligned to the left */
+    height: auto;
+    object-fit: cover;
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+.blog-article h2 {
+    font-size: 28px;
+    margin-top: 20px;
+    color: #2a3b5f;
+}
+
+.blog-article p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333333;
+    margin-left: 0; /* No need for margin left when text is under image */
+    margin-bottom: 20px; /* Adds space after each paragraph */
+}
+
+/* Back Button */
+.back-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a3b5f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #1f2a4d;
+}
+
+/* Scroll Button */
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2a3b5f;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-button:hover {
+    background-color: #1f2a4d;
+    transform: translateY(-2px);
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Footer */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Ensures footer stays at the bottom of the page */
+}
+
+/* Ensures images fit well within the containers */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures images are properly sized and do not stretch */
+}
