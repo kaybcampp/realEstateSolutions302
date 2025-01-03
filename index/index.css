@@ -88,16 +88,24 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('../images/background.png') center/cover no-repeat;
+    background-color: #ffffff; /* White background for the hero section */
     color: #333333;
     margin-top: 0; /* Removes gap between menu and image */
-    height: 700px; /* Increased height for a more prominent image */
+    height: 600px; /* Adjusted height for a less overwhelming image */
     display: flex;
     flex-direction: column; /* Ensures the bar is positioned at the bottom */
-    justify-content: flex-end; /* Aligns the bar to the bottom */
+    justify-content: center; /* Centers the content vertically */
+    align-items: center; /* Centers the content horizontally */
     overflow: hidden; /* Ensures the bar doesn't extend beyond the image */
+    text-align: center;
 }
 
+.hero img {
+    max-width: 30%; /* Makes the hero image much smaller */
+    display: block; /* Makes the image behave as a block element */
+}
+
+/* Hero Bar */
 .hero-bar {
     width: 100%; /* Stretches across the entire hero section */
     background-color: rgba(255, 255, 255, 0.7); /* Increased translucency */
