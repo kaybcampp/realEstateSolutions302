@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Estate Solutions 302 - Home</title>
     <link rel="stylesheet" href="../index/index.css">
+    <style>
+        /* Scroll Button Styles */
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #2a3b5f;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-button:hover {
+            background-color: #1f2a4d;
+            transform: translateY(-2px);
+        }
+
+        .scroll-button svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Floating Navigation Bar with Hamburger Icon -->
+    <!-- Top Navigation Bar -->
     <header>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -25,19 +51,18 @@
                         <a href="sold-homes.html">Sold Homes</a>
                     </div>
                 </li>
-                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="index/reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section with Background Image -->
-    <section id="home" class="hero" style="position: relative; overflow: hidden;">
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('../images/background.png') center/cover no-repeat; filter: brightness(70%); z-index: 1;"></div>
-        <div class="hero-content" style="position: relative; z-index: 2;">
+    <!-- Hero Section with Bottom Bar -->
+    <section id="home" class="hero">
+        <div class="hero-bar">
             <h1>Welcome to Real Estate Solutions 302</h1>
             <p>Delaware's Finest Properties, Tailored for You</p>
-            <a href="listings.html" class="btn">View Listings</a>
+            <a href="listings.html" class="btn-blue">View Listings</a>
         </div>
     </section>
 
@@ -78,14 +103,48 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
     </footer>
 
+    <!-- Scroll Button -->
+    <button class="scroll-button" id="scrollButton" aria-label="Scroll">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/> <!-- Downward Arrow -->
+        </svg>
+    </button>
+
     <script>
-        function toggleMenu() {
-            document.querySelector('header').classList.toggle('expanded');
+        const scrollButton = document.getElementById('scrollButton');
+        const scrollIcon = document.getElementById('scrollIcon');
+
+        function updateButtonIcon() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // At the bottom
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Top');
+            } else {
+                // At the top or scrolling
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
+            }
         }
+
+        scrollButton.addEventListener('click', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // Scroll to the top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Scroll to the bottom
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('scroll', updateButtonIcon);
+
+        // Initial update for icon
+        updateButtonIcon();
     </script>
 </body>
 </html>
