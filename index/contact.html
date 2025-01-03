@@ -48,24 +48,73 @@
     <!-- Scheduling Section -->
     <section class="schedule">
         <h2>Schedule a Zoom Consultation</h2>
+        <p class="small-text">Please select three of the best dates and times that work best for you!</p>
         <form id="scheduleForm">
             <div class="calendar-container">
-                <input type="date" id="appointmentDate" name="appointmentDate" required>
-                <select id="appointmentTime" name="appointmentTime" required>
+                <label for="appointmentDate1">Choose Day 1:</label>
+                <input type="date" id="appointmentDate1" name="appointmentDate1" required>
+                <select id="appointmentTime1" name="appointmentTime1" required>
                     <option value="">Select a Time</option>
+                    <option value="08:00">8:00 AM</option>
                     <option value="09:00">9:00 AM</option>
                     <option value="10:00">10:00 AM</option>
                     <option value="11:00">11:00 AM</option>
-                    <option value="01:00">1:00 PM</option>
-                    <option value="02:00">2:00 PM</option>
-                    <option value="03:00">3:00 PM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                </select>
+
+                <label for="appointmentDate2">Choose Day 2:</label>
+                <input type="date" id="appointmentDate2" name="appointmentDate2" required>
+                <select id="appointmentTime2" name="appointmentTime2" required>
+                    <option value="">Select a Time</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="20:00">8:00 PM</option>
+                </select>
+
+                <label for="appointmentDate3">Choose Day 3:</label>
+                <input type="date" id="appointmentDate3" name="appointmentDate3" required>
+                <select id="appointmentTime3" name="appointmentTime3" required>
+                    <option value="">Select a Time</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                    <option value="17:00">5:00 PM</option>
+                    <option value="18:00">6:00 PM</option>
+                    <option value="19:00">7:00 PM</option>
+                    <option value="20:00">8:00 PM</option>
                 </select>
             </div>
+
             <div class="contact-details">
                 <input type="text" id="name" name="name" placeholder="Your Name" required>
                 <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
             </div>
+
             <button type="submit">Submit</button>
         </form>
     </section>
@@ -78,20 +127,21 @@
     <!-- Scroll Button -->
     <button class="scroll-button" id="scrollButton" aria-label="Scroll">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"></path> <!-- Downward Arrow -->
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/> <!-- Downward Arrow -->
         </svg>
     </button>
 
-    <!-- Script for Scrolling Button -->
     <script>
         const scrollButton = document.getElementById('scrollButton');
         const scrollIcon = document.getElementById('scrollIcon');
 
         function updateButtonIcon() {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // At the bottom
                 scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
                 scrollButton.setAttribute('aria-label', 'Scroll to Top');
             } else {
+                // At the top or scrolling
                 scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
                 scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
             }
@@ -99,15 +149,20 @@
 
         scrollButton.addEventListener('click', () => {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top
+                // Scroll to the top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Scroll to the bottom
+                // Scroll to the bottom
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             }
         });
 
         window.addEventListener('scroll', updateButtonIcon);
-        updateButtonIcon(); // Initial update for icon
+
+        // Initial update for icon
+        updateButtonIcon();
     </script>
 </body>
 </html>
+
 
