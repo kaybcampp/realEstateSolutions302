@@ -6,10 +6,78 @@
     <title>Contact Us - Real Estate Solutions 302</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <style>
+        /* Inline styles for the Not Yet Ready section */
+        .not-ready {
+            background-color: #f4f4f4; /* Light background */
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .not-ready h2 {
+            font-size: 28px;
+            color: #2a3b5f; /* Matches the primary color */
+            margin-bottom: 20px;
+        }
+
+        .not-ready p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .not-ready form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .not-ready input {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .not-ready .input-group {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .not-ready .input-group input {
+            width: 48%; /* 48% width to make them side by side */
+        }
+
+        .not-ready button {
+            background-color: #2a3b5f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .not-ready button:hover {
+            background-color: #1f2a4d;
+        }
+    </style>
 </head>
 <body>
-     <!-- Top Navigation Bar -->
-     <header>
+    <!-- Top Navigation Bar -->
+    <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
@@ -57,7 +125,7 @@
     <section class="schedule">
         <h2>Schedule a Zoom Consultation</h2>
         <p class="small-text">Please select three of the best dates and times that work best for you!</p>
-        <form id="scheduleForm">
+        <form id="contact-form">
             <div class="calendar-container">
                 <label for="appointmentDate1">Choose Day 1:</label>
                 <input type="date" id="appointmentDate1" name="appointmentDate1" required>
@@ -124,6 +192,22 @@
             </div>
 
             <button type="submit">Submit</button>
+            <p id="success-message" style="display: none; color: green;">Thank you for contacting us! Kesia will reach out via email within 24 hours to confirm your Zoom consultation.</p>
+            <div id="form-status" style="margin-top: 10px; color: green;"></div>
+        </form>
+    </section>
+
+    <!-- Not Yet Ready Section -->
+    <section class="not-ready">
+        <h2>Not yet ready to start your home buying journey?</h2>
+        <p>Subscribe to our newsletter to stay well informed until your day comes!</p>
+        <form id="newsletter-form">
+            <div class="input-group">
+                <input type="text" id="newsletter-name" name="name" placeholder="Your Name" required>
+                <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required>
+            </div>
+            <button type="submit">Subscribe</button>
+            <p id="newsletter-success" style="display: none; color: green;">Thank you for subscribing! You'll stay updated until you're ready to start your journey.</p>
         </form>
     </section>
 
@@ -139,7 +223,84 @@
         </svg>
     </button>
 
+    <!-- Script for handling form submission -->
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+            const formspreeUrl = 'https://formspree.io/f/xanqboea'; // Formspree link
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(formspreeUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        successMessage.style.display = 'block'; // Show success message
+                        form.reset(); // Clear the form inputs
+
+                        // Hide success message after 12 seconds
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 12000);
+                    } else {
+                        alert('There was an issue submitting the form. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting the form:', error);
+                    alert('An error occurred while submitting the form. Please try again.');
+                }
+            });
+
+            // Newsletter Form Handling
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterSuccess = document.getElementById('newsletter-success');
+            const newsletterFormspreeUrl = 'https://formspree.io/f/xovjldno'; // Newsletter Formspree link
+
+            newsletterForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const newsletterData = new FormData(newsletterForm);
+
+                try {
+                    const response = await fetch(newsletterFormspreeUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: newsletterData
+                    });
+
+                    if (response.ok) {
+                        newsletterSuccess.style.display = 'block'; // Show success message
+                        newsletterForm.reset(); // Clear the form inputs
+
+                        // Hide success message after 12 seconds
+                        setTimeout(() => {
+                            newsletterSuccess.style.display = 'none';
+                        }, 12000);
+                    } else {
+                        alert('There was an issue submitting the form. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error submitting the form:', error);
+                    alert('An error occurred while submitting the form. Please try again.');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Scroll Button Functionality
         const scrollButton = document.getElementById('scrollButton');
         const scrollIcon = document.getElementById('scrollIcon');
 
@@ -170,6 +331,7 @@
         // Initial update for icon
         updateButtonIcon();
     </script>
+
 </body>
 </html>
 

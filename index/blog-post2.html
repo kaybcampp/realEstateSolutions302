@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="blog.css">
     <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link -->
 </head>
+
 <body>
     <!-- Top Navigation Bar -->
     <header>
@@ -43,25 +45,41 @@
     <section class="blog-article">
         <article>
             <img src="../images/991 Elm St_Delivered-5.jpg" alt="Delaware Housing Market Trends">
-            <h2>Delaware’s Housing Market Trends: What You Should Expect in 2025</h2>
-            <p>As we move into 2025, Delaware's housing market is experiencing notable shifts. Understanding these trends can help you make informed decisions when buying a home in this state. Here's an overview of what you can expect:</p>
+            <p>As we move into 2025, Delaware's housing market is experiencing notable shifts. Understanding these
+                trends can help you make informed decisions when buying a home in this state. Here's an overview of what
+                you can expect:</p>
 
             <h3>1. Rising Home Prices</h3>
-            <p>Home prices in Delaware have seen a steady increase in recent years, and experts predict this trend will continue in 2025. With limited inventory and strong demand, homebuyers should be prepared for higher prices in both urban and suburban areas.</p>
+            <p>Home prices in Delaware have seen a steady increase in recent years, and experts predict this trend will
+                continue in 2025. With limited inventory and strong demand, homebuyers should be prepared for higher
+                prices in both urban and suburban areas.</p>
 
             <h3>2. Increased Demand in Suburban Areas</h3>
-            <p>The COVID-19 pandemic has significantly impacted how people view living spaces. As remote work has become more common, many individuals and families are looking to suburban areas for more space and better quality of life. This shift is expected to continue in 2025, with increased demand for homes in suburban towns around Wilmington, Dover, and other key locations in Delaware.</p>
+            <p>The COVID-19 pandemic has significantly impacted how people view living spaces. As remote work has become
+                more common, many individuals and families are looking to suburban areas for more space and better
+                quality of life. This shift is expected to continue in 2025, with increased demand for homes in suburban
+                towns around Wilmington, Dover, and other key locations in Delaware.</p>
 
             <h3>3. Tight Inventory and Competitive Bidding</h3>
-            <p>Inventory levels in Delaware are lower than usual, leading to competitive bidding situations. Buyers may find themselves in multiple offer situations, especially in desirable areas. Be prepared to act quickly and strategically to secure the right property.</p>
+            <p>Inventory levels in Delaware are lower than usual, leading to competitive bidding situations. Buyers may
+                find themselves in multiple offer situations, especially in desirable areas. Be prepared to act quickly
+                and strategically to secure the right property.</p>
 
             <h3>4. Interest Rates and Financing Trends</h3>
-            <p>Interest rates are expected to remain relatively low in 2025, but they may rise gradually as the economy continues to recover. Buyers should take advantage of favorable rates to lock in a competitive mortgage deal. It's important to stay informed about rate fluctuations and how they may impact your purchasing power.</p>
+            <p>Interest rates are expected to remain relatively low in 2025, but they may rise gradually as the economy
+                continues to recover. Buyers should take advantage of favorable rates to lock in a competitive mortgage
+                deal. It's important to stay informed about rate fluctuations and how they may impact your purchasing
+                power.</p>
 
             <h3>5. The Growth of Green and Sustainable Homes</h3>
-            <p>With an increasing focus on sustainability and energy efficiency, there will likely be a surge in demand for eco-friendly homes in Delaware. Homebuyers are looking for properties that offer energy-saving features such as solar panels, energy-efficient appliances, and sustainable building materials. Keep an eye out for these types of homes as they become more popular.</p>
+            <p>With an increasing focus on sustainability and energy efficiency, there will likely be a surge in demand
+                for eco-friendly homes in Delaware. Homebuyers are looking for properties that offer energy-saving
+                features such as solar panels, energy-efficient appliances, and sustainable building materials. Keep an
+                eye out for these types of homes as they become more popular.</p>
 
-            <p>These trends suggest that Delaware's housing market will remain strong, competitive, and increasingly driven by demand for space, sustainability, and affordability. By staying informed about the evolving trends, you can make more informed decisions when navigating the 2025 real estate landscape.</p>
+            <p>These trends suggest that Delaware's housing market will remain strong, competitive, and increasingly
+                driven by demand for space, sustainability, and affordability. By staying informed about the evolving
+                trends, you can make more informed decisions when navigating the 2025 real estate landscape.</p>
         </article>
     </section>
 
@@ -73,7 +91,7 @@
     <!-- Scroll Button -->
     <button class="scroll-button" id="scrollButton" aria-label="Scroll">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/> <!-- Downward Arrow -->
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" /> <!-- Downward Arrow -->
         </svg>
     </button>
 
@@ -82,6 +100,40 @@
         <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // Scroll Button Functionality
+        const scrollButton = document.getElementById('scrollButton');
+        const scrollIcon = document.getElementById('scrollIcon');
+
+        function updateButtonIcon() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // At the bottom
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Top');
+            } else {
+                // At the top or scrolling
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
+            }
+        }
+
+        scrollButton.addEventListener('click', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // Scroll to the top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Scroll to the bottom
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('scroll', updateButtonIcon);
+
+        // Initial update for icon
+        updateButtonIcon();
+    </script>
+
     <script src="blog.js"></script>
 </body>
+
 </html>

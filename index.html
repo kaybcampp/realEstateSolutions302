@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Real Estate Solutions 302 - Home</title>
-        <link rel="stylesheet" href="../index/index.css">
-        <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link --> 
-    </head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Solutions 302 - Home</title>
+    <link rel="stylesheet" href="../index/index.css">
+    <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link --> 
     <style>
         /* Scroll Button Styles */
         .scroll-button {
@@ -38,10 +36,47 @@
             width: 24px;
             height: 24px;
         }
+
+        /* Contact Us Section */
+        .contact-section {
+            position: absolute;
+            top: 70px; /* Just below the menu bar */
+            right: 20px;
+            background-color: transparent; /* Removed the background container */
+            padding: 0;
+            z-index: 999;
+        }
+
+        .contact-section h2 {
+            font-size: 24px;
+            color: #2a3b5f;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .contact-section .btn-blue {
+            background-color: #2a3b5f;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section .btn-blue:hover {
+            background-color: #1f2a4d;
+        }
     </style>
+</head>
 <body>
-     <!-- Top Navigation Bar -->
-     <header>
+    <!-- Top Navigation Bar -->
+    <header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -65,6 +100,14 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Contact Us Section (Moved to top right) -->
+    <section class="contact-section">
+        <h2>Contact Me</h2>
+        <p><strong>Phone:</strong> (302) 494-6075</p>
+        <p><strong>Email:</strong> kesiadcampbell@gmail.com</p>
+        <a href="index/contact.html" class="btn-blue">Get In Touch</a>
+    </section>
 
     <!-- Hero Section with Image -->
     <section id="home" class="hero">
@@ -99,11 +142,11 @@
                 </div>
                 <div class="contact-info">
                     <p><strong>Phone:</strong> (302) 494-6075</p>
-                    <p><strong>Email:</strong> kesia.campbell@compass.com</p>
+                    <p><strong>Email:</strong> kesiadcampbell@gmail.com</p>
                 </div>
                 <img class="signature" src="../images/signature (1).png" alt="Digital Signature">
                 <div class="contact-button">
-                    <a href="contact-us.html" class="btn-blue">Contact Me!</a>
+                    <a href="index/contact.html" class="btn-blue">Contact Me!</a>
                 </div>
             </div>
         </div>
@@ -154,3 +197,4 @@
     </script>
 </body>
 </html>
+
