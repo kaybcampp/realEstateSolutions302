@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Homes - Real Estate Solutions 302</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <style>
+        /* Styling for the available homes header */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh; /* Reduced height for better balance */
+            background-color: #2a3b5f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 0;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin: 0;
+            text-transform: none; /* Removed uppercase styling */
+        }
+
+        /* Styling for the unavailable homes section */
+        .unavailable-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 800px; /* Ensuring content isn't too stretched */
+        }
+
+        .unavailable-section h1 {
+            font-size: 24px;
+            color: #2a3b5f;
+            margin-bottom: 20px;
+        }
+
+        .unavailable-section p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .unavailable-section .btn-blue {
+            background-color: #2a3b5f;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .unavailable-section .btn-blue:hover {
+            background-color: #1f2a4d;
+        }
+
+        /* Scroll Button */
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #2a3b5f;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-button:hover {
+            background-color: #1f2a4d;
+            transform: translateY(-2px);
+        }
+
+        .scroll-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Footer fixed at the bottom */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #2a3b5f;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About Me</a></li>
+                <li class="dropdown">
+                    <a href="listings.html" class="dropbtn">Listings</a>
+                    <div class="dropdown-content">
+                        <a href="available-homes.html">Available Homes</a>
+                        <a href="sold-homes.html">Sold Homes</a>
+                    </div>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- More Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="blog.html">Blog</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Available Homes Header -->
+    <section class="hero">
+        <h1>Available Homes</h1>
+    </section>
+
+    <!-- Unavailable Homes Section -->
+    <section class="unavailable-section">
+        <h1>This Section is Coming Soon!</h1>
+        <p>We are working on making our available homes list fully accessible. Please check back soon!</p>
+        <p>In the meantime, you can <a href="contact.html" class="btn-blue">contact us</a> and subscribe to our newsletter for updates when this feature is available.</p>
+    </section>
+
+    <!-- Scroll Button
+    <button class="scroll-button" id="scrollButton" aria-label="Scroll">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/>
+        </svg>
+    </button> --> 
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll Button Functionality
+        const scrollButton = document.getElementById('scrollButton');
+        const scrollIcon = document.getElementById('scrollIcon');
+
+        function updateButtonIcon() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // At the bottom
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Top');
+            } else {
+                // At the top or scrolling
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
+            }
+        }
+
+        scrollButton.addEventListener('click', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                // Scroll to the top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Scroll to the bottom
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('scroll', updateButtonIcon);
+
+        // Initial update for icon
+        updateButtonIcon();
+    </script>
+
+</body>
+</html>
+

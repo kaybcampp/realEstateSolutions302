@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sold Homes - Real Estate Solutions 302</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f7f7f7;
+            color: #333333;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            /* Set the body to full viewport height */
+        }
+
+        /* Top Navigation Bar */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-bottom: 2px solid #2a3b5f;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2a3b5f;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #ffffff;
+            background-color: #2a3b5f;
+            border-radius: 5px;
+        }
+
+        /* Hero Section (Updated with Blue Background and "Sold Homes" Text) */
+        .hero {
+            background-color: #2a3b5f;
+            /* Blue background */
+            color: white;
+            height: 100px;
+            /* Reduced height to match "Contact Us" header height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            /* Adjusted font size */
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            /* Adjust the size of the paragraph */
+            margin-top: 10px;
+            /* Space between the title and the paragraph */
+        }
+
+        /* Sold Listings Section */
+        .sold-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            flex-grow: 1;
+            /* Ensures this section takes up the available space */
+        }
+
+        /* Listing Card Styles */
+        .listing-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .listing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .listing-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .listing-card h3 {
+            font-size: 1.5rem;
+            color: #2a3b5f;
+            margin: 15px 0;
+        }
+
+        .listing-card p {
+            font-size: 1rem;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .listing-card .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #2a3b5f;
+            margin: 10px 0;
+        }
+
+        .listing-card .details {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .listing-card .btn-red {
+            display: inline-block;
+            background-color: red;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .listing-card .btn-red:hover {
+            background-color: red;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2a3b5f;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            margin-top: auto;
+            /* Ensures the footer is at the bottom */
+        }
+
+        /* Scroll Button Styles */
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #2a3b5f;
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-button:hover {
+            background-color: #1f2a4d;
+            transform: translateY(-2px);
+        }
+
+        .scroll-button svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#about">About Me</a></li>
+                <li class="dropdown">
+                    <a href="listings.html" class="dropbtn">Listings</a>
+                    <div class="dropdown-content">
+                        <a href="available-homes.html">Available Homes</a>
+                        <a href="sold-homes.html">Sold Homes</a>
+                    </div>
+                </li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">More</a>
+                    <div class="dropdown-content">
+                        <a href="blog.html">Blog</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sold Homes Header -->
+    <section class="hero">
+        <h1>Sold Homes</h1>
+        <p>A curated list of homes Kesia has matched with people like you!</p>
+    </section>
+
+    <!-- Sold Listings Section -->
+    <section class="sold-listings" id="sold-listings">
+        <!-- Listings will be dynamically populated here -->
+    </section>
+
+    <!-- Scroll Button -->
+    <button class="scroll-button" id="scrollButton" aria-label="Scroll">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" /> <!-- Downward Arrow -->
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Fetching the sold listings data from the backend
+        fetch('https://f3cf-2600-4040-72eb-c000-28ac-af74-50b5-ff56.ngrok-free.app/api/sold-listings', {
+            method: 'GET',
+            headers: {
+                'ngrok-skip-browser-warning': 'true'
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const listingsContainer = document.getElementById('sold-listings');
+                data.forEach(listing => {
+                    const card = document.createElement('div');
+                    card.classList.add('listing-card');
+                    card.innerHTML = `
+                        <img src="${listing.image}" alt="${listing.address}" />
+                        <h3>${listing.address}</h3>
+                        <p class="price">$${listing.price}</p>
+                        <p class="details">${listing.details}</p>
+                        <a class="btn-red">SOLD</a>
+                    `;
+                    listingsContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching listings:', error));
+
+        // Scroll Button Functionality
+        const scrollButton = document.getElementById('scrollButton');
+        const scrollIcon = document.getElementById('scrollIcon');
+
+        function updateButtonIcon() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Top');
+            } else {
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
+            }
+        }
+
+        scrollButton.addEventListener('click', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+
+        window.addEventListener('scroll', updateButtonIcon);
+
+        // Initial update for icon
+        updateButtonIcon();
+    </script>
+</body>
+
+</html>
