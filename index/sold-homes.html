@@ -280,7 +280,7 @@
 
     <script>
         // Fetching the sold listings data from the backend
-        fetch('https://5ab5-2600-4040-72eb-c000-bcde-5edb-8a7b-ae56.ngrok-free.app/api/sold-listings', {
+        fetch('https://5053-2600-4040-72eb-c000-bcde-5edb-8a7b-ae56.ngrok-free.app/api/sold-listings', {
             method: 'GET',
             headers: {
                 'ngrok-skip-browser-warning': 'true'
@@ -293,7 +293,7 @@
                     const card = document.createElement('div');
                     card.classList.add('listing-card');
                     card.innerHTML = `
-                <img src="https://5ab5-2600-4040-72eb-c000-bcde-5edb-8a7b-ae56.ngrok-free.app/${listing.image}" alt="${listing.address}" />  <!-- Updated image path -->
+                <img src="https://5053-2600-4040-72eb-c000-bcde-5edb-8a7b-ae56.ngrok-free.app/${listing.image}" alt="${listing.address}" />  <!-- Updated image path -->
                 <h3>${listing.address}</h3>
                 <p class="price">$${listing.price}</p>
                 <p class="details">${listing.details}</p>
