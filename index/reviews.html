@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews - Real Estate Solutions 302</title>
     <link rel="stylesheet" href="reviews.css">
     <link rel="icon" href="/images/logo.png" type="image/png"> <!-- Favicon Link -->
-    <style>/* Footer Styles */
-        footer {
-            background-color: #2a3b5f;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-        }
-    </style>
 </head>
+
 <body>
-     <!-- Top Navigation Bar -->
-     <header>
+    <!-- Top Navigation Bar -->
+    <header>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
@@ -33,7 +25,6 @@
                 </li>
                 <li><a href="reviews.html">Reviews</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <!-- More Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropbtn">More</a>
                     <div class="dropdown-content">
@@ -48,38 +39,84 @@
     <main class="board">
         <!-- Review 1 -->
         <div class="pinned-review">
-            <p>"Kesia was fantastic! She made the home-buying process stress-free and enjoyable."</p>
-            <span>- John Doe</span>
+            <p>"Kesia is just the right agent to work with, never pushy but always prompt. She got me exactly what I was looking for at the right price..."</p>
+            <a class="read-more" href="#" data-review="1">Read More</a>
+            <span>- tjmdelaware0</span>
         </div>
 
         <!-- Review 2 -->
         <div class="pinned-review">
-            <p>"I can’t thank Kesia enough for her dedication and professionalism."</p>
-            <span>- Jane Smith</span>
+            <p>"From the first day I began working with Ms. Campbell, she was very involved in my home buying process from stirring me in the right direction financially..."</p>
+            <a class="read-more" href="#" data-review="2">Read More</a>
+            <span>- Miesha Lowman</span>
         </div>
 
-        <!-- Review 3 -->
-        <div class="pinned-review">
-            <p>"Kesia is the best realtor we’ve ever worked with. Highly recommend her services!"</p>
-            <span>- The Johnson Family</span>
-        </div>
-
-        <!-- Review 4 -->
-        <div class="pinned-review">
-            <p>"She went above and beyond to ensure our needs were met."</p>
-            <span>- Alex Brown</span>
-        </div>
-
-        <!-- Review 5 -->
-        <div class="pinned-review">
-            <p>"Working with Kesia was an absolute pleasure from start to finish."</p>
-            <span>- Maria Lopez</span>
-        </div>
+        <!-- Add more reviews here... -->
     </main>
+
+    <!-- Modal for Enlarged View of Review -->
+    <div class="modal" id="reviewModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modalReviewContent"></div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // JavaScript for handling "Read More" and modal popup
+        document.addEventListener("DOMContentLoaded", function () {
+            const reviews = {
+                1: {
+                    text: `"Kesia is just the right agent to work with, never pushy but always prompt. She got me exactly what I was looking for at the right price..."`,
+                    author: "tjmdelaware0"
+                },
+                2: {
+                    text: `"From the first day I began working with Ms. Campbell, she was very involved in my home buying process from stirring me in the right direction financially..."`,
+                    author: "Miesha Lowman"
+                },
+                // Add the full text for other reviews here...
+            };
+
+            const modal = document.getElementById("reviewModal");
+            const modalContent = document.getElementById("modalReviewContent");
+            const closeModal = document.getElementById("closeModal");
+
+            // Attach event listeners to all "Read More" buttons
+            document.querySelectorAll(".read-more").forEach(button => {
+                button.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    const reviewId = this.getAttribute("data-review");
+                    modalContent.innerHTML = `<div class="pinned-review modal-review"><p>${reviews[reviewId].text}</p><span>- ${reviews[reviewId].author}</span></div>`;
+
+                    // Add blur effect to background content
+                    document.body.classList.add("blur-background");
+
+                    // Show the modal
+                    modal.style.display = "flex";
+                });
+            });
+
+            // Close the modal
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+                document.body.classList.remove("blur-background");
+            });
+
+            // Close the modal if clicked outside the content area
+            window.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                    document.body.classList.remove("blur-background");
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

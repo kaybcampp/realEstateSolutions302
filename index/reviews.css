@@ -104,7 +104,7 @@ main {
     margin-top: 80px; /* Clear the fixed header */
 }
 
-/* Pinned Reviews */
+/* Pinned Reviews (Sticky Notes) */
 .pinned-review {
     width: 300px;
     margin: 10px;
@@ -140,13 +140,73 @@ main {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Footer */
-footer {
-    background-color: #ffffff;
-    color: #333333;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: auto; /* Pushes footer to the bottom of the visible page */
+/* Read More Button */
+.read-more {
+    display: inline-block;
+    background-color: #2a3b5f;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
 }
 
+.read-more:hover {
+    background-color: #1f2a4d;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffe599;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2a3b5f;
+    cursor: pointer;
+}
+
+/* Background blur when modal is open */
+.blur-background {
+    filter: blur(5px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2a3b5f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
