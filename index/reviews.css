@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('../images/corkboard.png') center/200% no-repeat;
+    background: url('../images/corkboard.png') center/200% no-repeat; /* Ensure background is set for the whole body */
+    background-size: cover; /* Ensure background zooms properly */
     color: #333333;
     overflow-x: hidden;
-    display: flex; /* Flexbox for full-page layout */
+    display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
@@ -19,7 +20,7 @@ header {
     background-color: #ffffff;
     padding: 10px 20px;
     border-bottom: 2px solid #2a3b5f;
-    position: fixed; /* Fixes the menu bar to the top of the viewport */
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -48,7 +49,6 @@ nav ul li a {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Highlight Active Menu Option */
 nav ul li a.active {
     color: #ffffff;
     background-color: #2a3b5f;
@@ -61,7 +61,11 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Submenu Styles */
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
 .dropdown .dropdown-content {
     display: none;
     position: absolute;
@@ -84,6 +88,7 @@ nav ul li a:hover {
     padding: 10px;
     text-decoration: none;
     color: #2a3b5f;
+    font-size: 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -92,22 +97,32 @@ nav ul li a:hover {
     color: #ffffff;
 }
 
-/* Main Content */
-main {
-    flex: 1; /* Fills available space between header and footer */
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #2a3b5f;
+    color: #ffffff;
+    margin-top: 60px; /* Ensure hero section starts below the fixed menu */
+}
+
+/* Reviews Section */
+.board {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
-    gap: 15px;
-    margin-top: 80px; /* Clear the fixed header */
+    padding: 40px;
+    min-height: 100vh;
+    margin-top: 0; /* Ensure no extra space before content */
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: filter 0.3s ease;
 }
 
-/* Pinned Reviews (Sticky Notes) */
+/* Pinned Reviews */
 .pinned-review {
     width: 300px;
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
     background-color: #ffe599;
     border: 2px solid #f1c232;
@@ -115,24 +130,10 @@ main {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transform: rotate(-2deg);
     font-size: 16px;
-    text-align: center;
     position: relative;
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Add Pin Styling */
-.pinned-review::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 20px;
-    background-color: #d9534f;
-    border-radius: 50%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    cursor: pointer;
 }
 
 .pinned-review:hover {
@@ -140,7 +141,6 @@ main {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Read More Button */
 .read-more {
     display: inline-block;
     background-color: #2a3b5f;
@@ -157,56 +157,84 @@ main {
     background-color: #1f2a4d;
 }
 
+/* Footer */
+footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
 /* Modal Styles */
 .modal {
-    display: none;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     background-color: #ffe599;
-    padding: 20px;
+    border: 2px solid #f1c232;
     border-radius: 10px;
-    width: 600px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    z-index: 3000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.modal img {
+    width: 100%;
     height: auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
 }
 
-.modal-content p {
-    font-size: 1.1rem;
-    line-height: 1.5;
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
 }
 
-.close {
+/* Modal Content Centering */
+.modal-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #2a3b5f;
-    cursor: pointer;
-}
-
-/* Background blur when modal is open */
-.blur-background {
-    filter: blur(5px);
-}
-
-/* Footer Styles */
-footer {
-    background-color: #2a3b5f;
+    background-color: #d9534f;
     color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pinned Review in the modal */
+.modal .pinned-review {
+    display: inline-block;
     width: 100%;
+    margin: 0;
+    padding: 10px;
+    background-color: #ffe599;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Blur Background for Pinned Reviews */
+.pinned-review.blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
 }

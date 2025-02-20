@@ -57,7 +57,7 @@
     <!-- Modal for Enlarged View of Review -->
     <div class="modal" id="reviewModal">
         <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
+            <span class="close-btn" id="closeModal">&times;</span>
             <div id="modalReviewContent"></div>
         </div>
     </div>
@@ -92,27 +92,40 @@
                     e.preventDefault();
 
                     const reviewId = this.getAttribute("data-review");
-                    modalContent.innerHTML = `<div class="pinned-review modal-review"><p>${reviews[reviewId].text}</p><span>- ${reviews[reviewId].author}</span></div>`;
+                    modalContent.innerHTML = `<div class="pinned-review enlarged"><p>${reviews[reviewId].text}</p><span>- ${reviews[reviewId].author}</span></div>`;
 
-                    // Add blur effect to background content
-                    document.body.classList.add("blur-background");
+                    // Add blur effect to background content (only sticky notes)
+                    document.querySelectorAll('.pinned-review').forEach(note => {
+                        if (!note.classList.contains('enlarged')) {
+                            note.classList.add('blur-background');
+                        }
+                    });
 
-                    // Show the modal
+                    // Show the modal and activate its visibility
                     modal.style.display = "flex";
+                    modal.classList.add('active');
                 });
             });
 
             // Close the modal
             closeModal.addEventListener("click", function () {
                 modal.style.display = "none";
-                document.body.classList.remove("blur-background");
+                modal.classList.remove('active');
+                document.querySelectorAll('.pinned-review').forEach(note => {
+                    note.classList.remove('blur-background');
+                    note.classList.remove('enlarged');
+                });
             });
 
             // Close the modal if clicked outside the content area
             window.addEventListener("click", function (e) {
                 if (e.target === modal) {
                     modal.style.display = "none";
-                    document.body.classList.remove("blur-background");
+                    modal.classList.remove('active');
+                    document.querySelectorAll('.pinned-review').forEach(note => {
+                        note.classList.remove('blur-background');
+                        note.classList.remove('enlarged');
+                    });
                 }
             });
         });
@@ -120,3 +133,4 @@
 </body>
 
 </html>
+
