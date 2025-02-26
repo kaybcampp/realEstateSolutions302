@@ -48,7 +48,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 15px; /* Reduced gap for better spacing */
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -62,7 +62,7 @@ nav ul li a {
     text-decoration: none;
     color: #2a3b5f;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px; /* Reduced font size */
     padding: 5px 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -164,6 +164,35 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
+/* Contact Section */
+.contact-section {
+    position: absolute;
+    bottom: 20px; /* Move to the bottom left of the hero section */
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight background for contrast */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    font-size: 14px; /* Smaller text for better visuals */
+}
+
+.contact-section h2 {
+    font-size: 20px;
+    color: #2a3b5f;
+    margin-bottom: 5px;
+}
+
+.contact-section p {
+    font-size: 14px;
+    color: #333;
+}
+
+.contact-section .btn-blue {
+    font-size: 12px; /* Smaller button size */
+    padding: 6px 12px;
+}
+
 /* About Section */
 .section {
     padding: 50px 20px;
@@ -260,14 +289,15 @@ footer {
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
     .hero-bar {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 5px;
     }
 
     .business-card {
@@ -313,4 +343,5 @@ footer {
     .nav-logo {
         width: 50px; /* Adjust the logo size if necessary */
     }
-}
+
+   
