@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('../images/corkboard.png') center/200% no-repeat; /* Ensure background is set for the whole body */
-    background-size: cover; /* Ensure background zooms properly */
+    background: url('../images/corkboard.png') center/200% no-repeat;
+    background-size: cover;
     color: #333333;
     overflow-x: hidden;
     display: flex;
@@ -13,22 +13,21 @@ body {
 }
 
 /* Top Navigation Bar */
-/* Add a class to the logo image to position it properly in the navbar */
 .nav-logo {
-    width: 40px; /* You can adjust this as per your needs */
+    width: 40px; /* Adjust as per your needs */
     height: auto;
-    margin-right: 20px; /* Adds spacing to the right of the logo */
+    margin-right: 20px;
 }
 
 header {
     display: flex;
-    justify-content: center; /* Ensures the menu options remain centered */
+    justify-content: center; 
     align-items: center;
     background-color: #ffffff;
     padding: 10px 20px;
     border-bottom: 2px solid #2a3b5f;
-    position: fixed; /* Fixes the menu bar to the top of the viewport */
-    top: 0; /* Ensures it is at the top of the visible page */
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,13 +35,13 @@ header {
 
 header nav {
     display: flex;
-    justify-content: center; /* Centers the menu options */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 header .nav-logo {
-    position: absolute; /* Positions the logo at the left of the header */
+    position: absolute;
     left: 20px;
 }
 
@@ -251,4 +250,43 @@ footer {
 .pinned-review.blur-background {
     filter: blur(5px);
     transition: filter 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    header .nav-logo {
+        width: 35px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .board {
+        padding: 20px;
+    }
+
+    .pinned-review {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .modal {
+        width: 90%;
+    }
+
+    .read-more {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .scroll-button {
+        width: 45px;
+        height: 45px;
+    }
 }

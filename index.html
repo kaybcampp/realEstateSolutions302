@@ -83,6 +83,90 @@
             width: 100%;
         }
 
+        /* New Section Styles */
+        .info-section {
+            padding: 50px 20px;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            font-size: 32px;
+            color: #2a3b5f;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .info-section .info-box {
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: left;
+            display: inline-block;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-section .info-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-section .info-box h3 {
+            font-size: 24px;
+            color: #2a3b5f;
+            margin-bottom: 15px;
+        }
+
+        .info-section .info-box p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* New Image Section */
+        .meet-kesia-section {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .meet-kesia-section .image-box {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .meet-kesia-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .meet-kesia-section .image-box h3 {
+            font-size: 24px;
+            color: #2a3b5f;
+            margin-bottom: 10px;
+        }
+
+        .meet-kesia-section .image-box p {
+            font-size: 16px;
+            color: #666;
+        }
+
     </style>
 </head>
 <body>
@@ -123,7 +207,6 @@
 
     <!-- Hero Section with Image -->
     <section id="home" class="hero">
-        <!-- Reduced the size of the image -->
         <img src="../images/logo.png" alt="Real Estate Solutions Image">
     </section>
 
@@ -161,6 +244,46 @@
                     <a href="index/contact.html" class="btn-blue">Contact Me!</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Real Estate Solutions 302 Section -->
+    <section class="info-section">
+        <h2>Why Choose Real Estate Solutions 302?</h2>
+        <div class="info-box">
+            <h3>Experience You Can Trust</h3>
+            <p>With over 14 years of experience in Delaware’s real estate market, we offer in-depth local expertise to guide you every step of the way.</p>
+        </div>
+        <div class="info-box">
+            <h3>Customer-Centric Service</h3>
+            <p>Our priority is always to meet your needs, whether you're buying, selling, or investing. We provide personalized, hands-on service to ensure your goals are met.</p>
+        </div>
+        <div class="info-box">
+            <h3>Innovative Solutions</h3>
+            <p>We utilize the latest technology and innovative approaches to market properties and find the best opportunities for our clients.</p>
+        </div>
+    </section>
+
+    <!-- Meet Kesia Section -->
+    <section class="meet-kesia-section">
+        <div class="image-box">
+            <img src="images/(15).jpg" alt="Meet Kesia">
+            <h3>Meet Kesia</h3>
+            <p>Kesia Campbell is a seasoned REALTOR® in Delaware with a passion for helping clients achieve their real estate dreams. With expertise as both a former Loan Officer and real estate professional, Kesia provides valuable insights into the buying, selling, and financing process. Her client-centered approach ensures that each transaction is smooth, informed, and stress-free. Kesia's commitment to excellence and her personalized approach have earned her a loyal following of clients. Outside of work, she loves visiting her daughter in Florida and spending time with her sons, Kameron and Kaden.</p>
+        </div>
+        <div class="image-box">
+            <img src="images/20240603_173230.jpg" alt="Personlized Guidance">
+            <h3>Personalized Guidance</h3>
+            <p>Kesia Campbell offers a truly personalized real estate experience, tailoring her approach to meet each client's unique needs and concerns. As highlighted in several reviews, Kesia's ability to listen carefully to her clients and provide thoughtful advice has earned her a reputation for being approachable and reliable. One client mentioned how Kesia helped them navigate the emotional journey of selling and finding a new home during the challenging COVID-19 pandemic, ensuring a smooth transition by promptly handling offers and negotiations.
+
+                Her commitment to maintaining clear, constant communication—whether it’s checking in during long-distance transactions or showing up personally at inspections—demonstrates her dedication to going above and beyond for her clients. Reviews also reflect Kesia's vast knowledge and professionalism, with one client sharing how impressed they were with her quick responses and expertise in every home they viewed.
+                
+                Kesia's dedication to providing personalized, knowledgeable guidance ensures her clients feel confident, informed, and empowered throughout their real estate journey.</p>
+        </div>
+        <div class="image-box">
+            <img src="images/IMG_9830.jpg" alt="Committed to Your Success">
+            <h3>Committed to Your Success</h3>
+            <p>Kesia Campbell is fully dedicated to ensuring her clients’ success throughout the real estate journey. With a deep understanding of the market and a passion for service, she goes the extra mile to help buyers, sellers, and investors achieve their goals. Whether navigating the complexities of paperwork or negotiating the best deal, Kesia’s commitment is unwavering. Her clients appreciate her proactive approach, attention to detail, and genuine care, making her a trusted partner in every step of the process.</p>
         </div>
     </section>
 

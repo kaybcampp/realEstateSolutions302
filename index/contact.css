@@ -8,22 +8,21 @@ body {
 }
 
 /* Top Navigation Bar */
-/* Add a class to the logo image to position it properly in the navbar */
 .nav-logo {
-    width: 40px; /* You can adjust this as per your needs */
+    width: 40px;
     height: auto;
-    margin-right: 20px; /* Adds spacing to the right of the logo */
+    margin-right: 20px;
 }
 
 header {
     display: flex;
-    justify-content: center; /* Ensures the menu options remain centered */
+    justify-content: center;
     align-items: center;
     background-color: #ffffff;
     padding: 10px 20px;
     border-bottom: 2px solid #2a3b5f;
-    position: fixed; /* Fixes the menu bar to the top of the viewport */
-    top: 0; /* Ensures it is at the top of the visible page */
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,13 +30,13 @@ header {
 
 header nav {
     display: flex;
-    justify-content: center; /* Centers the menu options */
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 header .nav-logo {
-    position: absolute; /* Positions the logo at the left of the header */
+    position: absolute;
     left: 20px;
 }
 
@@ -201,4 +200,52 @@ footer {
 .scroll-button svg {
     width: 24px;
     height: 24px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 10px; /* Less padding for mobile */
+    }
+
+    header .nav-logo {
+        width: 35px; /* Adjusted size for mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the menu items */
+        gap: 10px; /* Adjusted gap for vertical layout */
+    }
+
+    .hero {
+        padding: 40px 20px; /* Adjust padding for mobile */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    }
+
+    .contact-section {
+        top: 90px; /* Adjust for fixed header */
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-section h2 {
+        font-size: 22px;
+    }
+
+    .contact-section p {
+        font-size: 14px;
+    }
+
+    .contact-section .btn-blue {
+        font-size: 14px;
+    }
+
+    .scroll-button {
+        width: 45px;
+        height: 45px;
+    }
 }
