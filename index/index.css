@@ -267,4 +267,32 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
+
+    .business-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .card-image img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+    .card-info {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .signature {
+        width: 150px;
+    }
+
+    .btn-blue {
+        padding: 12px 24px;
+    }
 }
