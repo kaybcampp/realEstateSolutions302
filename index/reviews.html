@@ -13,6 +13,7 @@
     <!-- Top Navigation Bar -->
     <header>
         <nav>
+            <img src="/images/realLogo.jpg" alt="Logo" class="nav-logo"> <!-- Logo Image -->
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../index.html#about">About Me</a></li>
@@ -39,16 +40,38 @@
     <main class="board">
         <!-- Review 1 -->
         <div class="pinned-review">
-            <p>"Kesia is just the right agent to work with, never pushy but always prompt. She got me exactly what I was looking for at the right price..."</p>
+            <p>"I first started working with Lakesia in June of 2020, I was extremely hesitant considering we were
+                right smack in the middle of COVID-19 pandemic..."</p>
             <a class="read-more" href="#" data-review="1">Read More</a>
-            <span>- tjmdelaware0</span>
+            <span>- Serena</span>
         </div>
 
         <!-- Review 2 -->
         <div class="pinned-review">
-            <p>"From the first day I began working with Ms. Campbell, she was very involved in my home buying process from stirring me in the right direction financially..."</p>
+            <p>"Kesia was a great help to me selling my home when I was several miles away from the home location..."</p>
             <a class="read-more" href="#" data-review="2">Read More</a>
-            <span>- Miesha Lowman</span>
+            <span>- tianamoreo 612</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="pinned-review">
+            <p>"Kesia Campbell truly helped our dreams come true with buying a home...."</p>
+            <a class="read-more" href="#" data-review="3">Read More</a>
+            <span>- Michele Mills</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="pinned-review">
+            <p>"Kesia was a great RE agent and was helpful through every step of the process..."</p>
+            <a class="read-more" href="#" data-review="4">Read More</a>
+            <span>- DinaTzezairlidis</span>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="pinned-review">
+            <p>"My experiences with Kesia Campbell have been absolutely wonderful..."</p>
+            <a class="read-more" href="#" data-review="5">Read More</a>
+            <span>- kayb12345</span>
         </div>
 
         <!-- Add more reviews here... -->
@@ -72,14 +95,30 @@
         document.addEventListener("DOMContentLoaded", function () {
             const reviews = {
                 1: {
-                    text: `"Kesia is just the right agent to work with, never pushy but always prompt. She got me exactly what I was looking for at the right price..."`,
-                    author: "tjmdelaware0"
+                    text: `"I first started working with Lakesia in June of 2020, I was extremely hesitant considering we were
+right smack in the middle of COVID-19 pandemic. However, after discussing with her my concerns
+but also my desires it was a lot easier for me to move forward with my plan of selling my current
+home and beginning what turned into an emotional quest to find my forever dream home. To my
+surprise the day after putting my house on the market I had received 3 offers and just like that, my
+house was sold by mid July."`,
+                    author: "Serena"
                 },
                 2: {
-                    text: `"From the first day I began working with Ms. Campbell, she was very involved in my home buying process from stirring me in the right direction financially..."`,
-                    author: "Miesha Lowman"
+                    text: `"Kesia was a great help to me selling my home when I was several miles away from the home location. She kept in touch every few days and immediately when an offer was submitted. She made contacts with the mortgage company and helped with the necessary paperwork I feel he went above and beyond to help me with the sale."`,
+                    author: "tianamoreo 612"
                 },
-                // Add the full text for other reviews here...
+                3: {
+                    text: `"Kesia Campbell truly helped our dreams come true with buying a home. She was completely honestly with us and took her time with us during this process."`,
+                    author: "Michele Mills"
+                },
+                4: {
+                    text: `"Kesia was a great RE agent and was helpful through every step of the process. She even showed up to the inspection which is the first time I've ever seen an agent do that."`,
+                    author: "DinaTzezairlidis"
+                },
+                5: {
+                    text: `"My experiences with Kesia Campbell have been absolutely wonderful. Mrs. Campbell is a very professional, very well put together individual. Mrs. Campbell has recently been showing my family and I some very beautiful homes! Right from the start Mrs. Campbell greeted my family and I with bright smiles and firm handshakes. When questions were asked about the homes she knew the answer almost immediately. I was impressed with her high knowledge of the homes, She knows exactly what she's talking about. I have no bad experiences with her and this is my go-to Realtor. We are going to buy very soon and Kesia Campbell is the person we will seal the deal with. I recommend her if you would like a professional, kind, intelligent individual for the buying or selling of your home!"`,
+                    author: "kayb12345"
+                },
             };
 
             const modal = document.getElementById("reviewModal");
@@ -133,4 +172,3 @@
 </body>
 
 </html>
-

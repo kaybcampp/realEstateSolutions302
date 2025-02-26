@@ -10,9 +10,16 @@ body {
 }
 
 /* Top Navigation Bar */
+/* Add a class to the logo image to position it properly in the navbar */
+.nav-logo {
+    width: 40px; /* You can adjust this as per your needs */
+    height: auto;
+    margin-right: 20px; /* Adds spacing to the right of the logo */
+}
+
 header {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Ensures the menu options remain centered */
     align-items: center;
     background-color: #ffffff;
     padding: 10px 20px;
@@ -22,6 +29,18 @@ header {
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: center; /* Centers the menu options */
+    align-items: center;
+    width: 100%;
+}
+
+header .nav-logo {
+    position: absolute; /* Positions the logo at the left of the header */
+    left: 20px;
 }
 
 nav ul {
