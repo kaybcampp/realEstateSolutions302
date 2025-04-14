@@ -48,7 +48,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Reduced gap for better spacing */
+    gap: 20px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -62,7 +62,7 @@ nav ul li a {
     text-decoration: none;
     color: #2a3b5f;
     font-weight: bold;
-    font-size: 16px; /* Reduced font size */
+    font-size: 18px;
     padding: 5px 10px;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -164,35 +164,6 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* Contact Section */
-.contact-section {
-    position: absolute;
-    bottom: 20px; /* Move to the bottom left of the hero section */
-    left: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slight background for contrast */
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    font-size: 14px; /* Smaller text for better visuals */
-}
-
-.contact-section h2 {
-    font-size: 20px;
-    color: #2a3b5f;
-    margin-bottom: 5px;
-}
-
-.contact-section p {
-    font-size: 14px;
-    color: #333;
-}
-
-.contact-section .btn-blue {
-    font-size: 12px; /* Smaller button size */
-    padding: 6px 12px;
-}
-
 /* About Section */
 .section {
     padding: 50px 20px;
@@ -287,19 +258,195 @@ footer {
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
 }
 
+ /* Scroll Button Styles */
+ .scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2a3b5f;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-button:hover {
+    background-color: #1f2a4d;
+    transform: translateY(-2px);
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Contact Section */
+.contact-section {
+    position: absolute;
+    top: 70px; /* Move to the top right of the hero section, just below the menu bar */
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight background for contrast */
+    padding: 20px; /* Adjusted padding */
+    border-radius: 10px; /* Slightly larger radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deep blue shadow effect */
+    z-index: 1000;
+    font-size: 14px; /* Smaller text for better visuals */
+}
+
+.contact-section h2 {
+    font-size: 20px;
+    color: #2a3b5f;
+    margin-bottom: 10px; /* Increased margin for better spacing */
+}
+
+.contact-section p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px; /* Spacing between paragraph and button */
+}
+
+.contact-section .btn-blue {
+    font-size: 12px; /* Smaller button size */
+    padding: 6px 12px; /* Adjusted padding */
+    background-color: #2a3b5f;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section .btn-blue:hover {
+    background-color: #1f2a4d;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2a3b5f;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* New Section Styles */
+.info-section {
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 32px;
+    color: #2a3b5f;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.info-section .info-box {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-section .info-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-section .info-box h3 {
+    font-size: 24px;
+    color: #2a3b5f;
+    margin-bottom: 15px;
+}
+
+.info-section .info-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* New Image Section */
+.meet-kesia-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    gap: 30px; /* Increased gap between boxes */
+    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+    justify-content: center; /* Ensure the content is centered */
+}
+
+.meet-kesia-section .image-box {
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 15px; /* Larger border radius for a smoother look */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for a more prominent look */
+    width: 100%;
+    max-width: 350px; /* Increased max width for more space */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meet-kesia-section .image-box:hover {
+    transform: translateY(-10px); /* Slight hover effect for the boxes */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15); /* Increased shadow effect on hover */
+}
+
+.meet-kesia-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Increased margin for better spacing */
+}
+
+.meet-kesia-section .image-box h3 {
+    font-size: 26px; /* Slightly increased font size for emphasis */
+    color: #2a3b5f;
+    margin-bottom: 15px; /* Increased margin for better spacing */
+}
+
+.meet-kesia-section .image-box p {
+    font-size: 18px; /* Increased font size for better readability */
+    color: #666;
+    margin-bottom: 20px; /* Increased bottom margin */
+}
+
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
+    /* Navigation Bar */
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Hero Bar */
     .hero-bar {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
 
-    nav ul {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 5px;
-    }
-
+    /* Business Card */
     .business-card {
         flex-direction: column;
         text-align: center;
@@ -328,6 +475,7 @@ footer {
         padding: 12px 24px;
     }
 
+    /* Header */
     header nav {
         flex-direction: row;
         justify-content: space-between;
@@ -344,4 +492,100 @@ footer {
         width: 50px; /* Adjust the logo size if necessary */
     }
 
-   
+    /* Contact Section */
+    .contact-section {
+        position: absolute;
+        top: 70px; /* Moves the contact card below the header */
+        right: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 15px; /* Adjusted padding */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        font-size: 14px;
+    }
+
+    .contact-section h2 {
+        font-size: 18px;
+        color: #2a3b5f;
+    }
+
+    .contact-section p {
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 450px; /* Adjusted height for mobile */
+    }
+
+    .hero img {
+        max-width: 60%; /* Image size adjusted for mobile */
+    }
+
+    /* Meet Kesia Section */
+    .meet-kesia-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .meet-kesia-section .image-box {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .meet-kesia-section .image-box h3 {
+        font-size: 22px;
+    }
+
+    .meet-kesia-section .image-box p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Info Section */
+    .info-section .info-box {
+        max-width: 100%; /* Full-width for mobile */
+        margin-bottom: 20px;
+    }
+
+    .info-section h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .info-section .info-box h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .info-section .info-box p {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+
+    /* Scroll Button */
+    .scroll-button {
+        bottom: 10px; /* Adjusted position for mobile */
+        right: 10px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .scroll-button svg {
+        width: 20px;
+        height: 20px;
+    }
+}

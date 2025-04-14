@@ -115,7 +115,7 @@ nav ul li a.active {
 /* Blog Posts */
 .blog-posts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* Ensure 2 items per row */
     gap: 20px;
     padding: 20px;
     flex-grow: 1;
@@ -266,36 +266,56 @@ footer {
 /* Mobile Styles */
 @media (max-width: 768px) {
     header {
-        padding: 10px 10px;
+        padding: 10px 10px; /* Less padding for mobile */
     }
 
     header .nav-logo {
-        width: 35px;
+        width: 35px; /* Adjust logo size for mobile */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column; /* Stack the menu items */
+        gap: 10px; /* Adjusted gap for vertical layout */
     }
 
     .hero {
-        padding: 40px 20px;
+        padding: 40px 20px; /* Adjust padding for mobile */
     }
 
     .blog-posts {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack blog posts in a single column on mobile */
+        padding: 20px 10px; /* Adjust padding */
     }
 
-    .blog-article img {
-        width: 80%;
-        margin-right: 0;
-        float: none;
-        margin-bottom: 20px;
+    .blog-post {
+        margin: 0 10px; /* Adjust margin to create a little space around each post */
+    }
+
+    .blog-post img {
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .blog-post h2 {
+        font-size: 20px; /* Adjust the title size */
+        margin: 15px 0;
+    }
+
+    .blog-post p {
+        font-size: 14px; /* Adjust text size */
+        margin: 0 15px 15px;
     }
 
     .blog-post a {
         font-size: 14px;
-        padding: 4px 8px;
+        padding: 4px 8px; /* Smaller button size */
+    }
+
+    .blog-article img {
+        width: 80%; /* Adjust image width */
+        margin-right: 0;
+        float: none;
+        margin-bottom: 20px;
     }
 
     .scroll-button {

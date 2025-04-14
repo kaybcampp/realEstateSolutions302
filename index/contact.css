@@ -209,7 +209,7 @@ footer {
     }
 
     header .nav-logo {
-        width: 35px; /* Adjusted size for mobile */
+        width: 35px; /* Adjust logo size for mobile */
     }
 
     nav ul {
@@ -222,14 +222,24 @@ footer {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
     }
 
+    .schedule {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Contact Section */
     .contact-section {
+        position: absolute;
         top: 90px; /* Adjust for fixed header */
         padding: 20px;
         width: 100%;
         text-align: center;
+        background-color: rgba(255, 255, 255, 0.8); /* Adjust background for contrast */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .contact-section h2 {
@@ -242,6 +252,7 @@ footer {
 
     .contact-section .btn-blue {
         font-size: 14px;
+        padding: 10px 15px; /* Adjust button padding for mobile */
     }
 
     .scroll-button {
