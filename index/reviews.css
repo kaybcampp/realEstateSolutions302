@@ -173,11 +173,44 @@ nav ul li a.active {
     background-color: #1f2a4d;
 }
 
-/* Footer */
+/* Footer Styles */
 footer {
-    background-color: #ffffff;
+    background-color: #2a3b5f;
+    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+ /* Scroll Button Styles */
+ .scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #2a3b5f;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-button:hover {
+    background-color: #1f2a4d;
+    transform: translateY(-2px);
+}
+
+.scroll-button svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Modal Styles */

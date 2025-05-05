@@ -196,36 +196,6 @@
             margin-top: auto;
             /* Ensures the footer is at the bottom */
         }
-
-        /* Scroll Button Styles */
-        .scroll-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #2a3b5f;
-            color: #ffffff;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        .scroll-button:hover {
-            background-color: #1f2a4d;
-            transform: translateY(-2px);
-        }
-
-        .scroll-button svg {
-            width: 24px;
-            height: 24px;
-        }
     </style>
 </head>
 
@@ -276,62 +246,35 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+        <p>&copy; 2025 Move With Kesia DE. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Fetching the sold listings data from the backend
-        fetch('https://movewithkesiade.com/api/sold-listings', {
-            method: 'GET',
-            headers: {
-                'ngrok-skip-browser-warning': 'true'
-            }
-        })
-            .then(response => response.json())
-            .then(data => {
-                const listingsContainer = document.getElementById('sold-listings');
-                data.forEach(listing => {
-                    const card = document.createElement('div');
-                    card.classList.add('listing-card');
-                    card.innerHTML = `
-                <img src="https://movewithkesiade.com/${listing.image}" alt="${listing.address}" />  <!-- Updated image path -->
+<script>
+    // Fetching the sold listings data from the backend
+    fetch('https://movewithkesiade.com/api/sold-listings', {
+        method: 'GET',
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const listingsContainer = document.getElementById('sold-listings');
+        data.forEach(listing => {
+            const card = document.createElement('div');
+            card.classList.add('listing-card');
+            card.innerHTML = `
+                <img src="https://movewithkesiade.com/${listing.image}" alt="${listing.address}" />
                 <h3>${listing.address}</h3>
                 <p class="price">$${listing.price}</p>
                 <p class="details">${listing.details}</p>
                 <a class="btn-red">SOLD</a>
             `;
-                    listingsContainer.appendChild(card);
-                });
-            })
-            .catch(error => console.error('Error fetching listings:', error));
-
-        // Scroll Button Functionality
-        const scrollButton = document.getElementById('scrollButton');
-        const scrollIcon = document.getElementById('scrollIcon');
-
-        function updateButtonIcon() {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
-                scrollButton.setAttribute('aria-label', 'Scroll to Top');
-            } else {
-                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
-                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
-            }
-        }
-
-        scrollButton.addEventListener('click', () => {
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            } else {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            }
+            listingsContainer.appendChild(card);
         });
-
-        window.addEventListener('scroll', updateButtonIcon);
-
-        // Initial update for icon
-        updateButtonIcon();
-    </script>
+    })
+    .catch(error => console.error('Error fetching listings:', error));
+</script>
 </body>
 
 </html>

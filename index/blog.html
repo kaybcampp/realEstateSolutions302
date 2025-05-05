@@ -87,9 +87,41 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Real Estate Solutions 302. All Rights Reserved.</p>
+        <p>&copy; 2025 Move With Kesia DE. All Rights Reserved.</p>
     </footer>
 
+    <!-- Scroll Button -->
+    <button class="scroll-button" id="scrollButton" aria-label="Scroll">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/> <!-- Downward Arrow -->
+        </svg>
+    </button>
+
+    <script>
+        const scrollButton = document.getElementById('scrollButton');
+        const scrollIcon = document.getElementById('scrollIcon');
+    
+        function updateButtonIcon() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Top');
+            } else {
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
+            }
+        }
+    
+        scrollButton.addEventListener('click', () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }
+        });
+    
+        window.addEventListener('scroll', updateButtonIcon);
+        updateButtonIcon(); // Initial icon state
+    </script>
     <script src="blog.js"></script>
 </body>
 
