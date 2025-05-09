@@ -6,26 +6,32 @@ body {
     box-sizing: border-box;
     background-color: #f7f7f7;
     color: #333333;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
 }
 
 /* Top Navigation Bar */
 /* Add a class to the logo image to position it properly in the navbar */
 .nav-logo {
-    width: 40px; /* You can adjust this as per your needs */
+    width: 40px;
+    /* You can adjust this as per your needs */
     height: auto;
-    margin-right: 20px; /* Adds spacing to the right of the logo */
+    margin-right: 20px;
+    /* Adds spacing to the right of the logo */
 }
 
 header {
     display: flex;
-    justify-content: center; /* Ensures the menu options remain centered */
+    justify-content: center;
+    /* Ensures the menu options remain centered */
     align-items: center;
     background-color: #ffffff;
     padding: 10px 20px;
     border-bottom: 2px solid #2a3b5f;
-    position: fixed; /* Fixes the menu bar to the top of the viewport */
-    top: 0; /* Ensures it is at the top of the visible page */
+    position: fixed;
+    /* Fixes the menu bar to the top of the viewport */
+    top: 0;
+    /* Ensures it is at the top of the visible page */
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,13 +39,15 @@ header {
 
 header nav {
     display: flex;
-    justify-content: center; /* Centers the menu options */
+    justify-content: center;
+    /* Centers the menu options */
     align-items: center;
     width: 100%;
 }
 
 header .nav-logo {
-    position: absolute; /* Positions the logo at the left of the header */
+    position: absolute;
+    /* Positions the logo at the left of the header */
     left: 20px;
 }
 
@@ -109,36 +117,46 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     position: relative;
-    background-color: #ffffff; /* White background for the hero section */
-    color: #333333;
-    margin-top: 0; /* Removes gap between menu and image */
-    height: 600px; /* Adjusted height for a less overwhelming image */
-    display: flex;
-    flex-direction: column; /* Ensures the bar is positioned at the bottom */
-    justify-content: center; /* Centers the content vertically */
-    align-items: center; /* Centers the content horizontally */
-    overflow: hidden; /* Ensures the bar doesn't extend beyond the image */
+    width: 100%;
+    height: 180px;
     text-align: center;
+    padding-top: 60px;
+    /* 👈 reserve space for nav */
+    background-image: url('/assets/images/logo.png');
+    /* Update path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero img {
-    max-width: 30%; /* Makes the hero image much smaller */
-    display: block; /* Makes the image behave as a block element */
+    max-width: 30%;
+    /* Makes the hero image much smaller */
+    display: block;
+    /* Makes the image behave as a block element */
 }
 
 /* Hero Bar */
 .hero-bar {
-    width: 100%; /* Stretches across the entire hero section */
-    background-color: rgba(255, 255, 255, 0.7); /* Increased translucency */
-    padding: 8px; /* Reduced padding for a shorter bar */
+    width: 100%;
+    /* Stretches across the entire hero section */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Increased translucency */
+    padding: 8px;
+    /* Reduced padding for a shorter bar */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centers the content */
+    text-align: center;
+    /* Centers the content */
 }
 
 .hero-bar h1 {
     font-size: 28px;
     color: #2a3b5f;
-    margin-bottom: 5px; /* Reduced margin for compact layout */
+    margin-bottom: 5px;
+    /* Reduced margin for compact layout */
 }
 
 .hero-bar p {
@@ -150,7 +168,8 @@ nav ul li a.active {
 .hero-bar .btn-blue {
     background-color: #2a3b5f;
     color: #ffffff;
-    padding: 8px 16px; /* Slightly reduced button size */
+    padding: 8px 16px;
+    /* Slightly reduced button size */
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -228,7 +247,8 @@ nav ul li a.active {
 }
 
 .contact-button {
-    margin-top: auto; /* Push the button to the bottom */
+    margin-top: auto;
+    /* Push the button to the bottom */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -258,8 +278,8 @@ footer {
     box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
 }
 
- /* Scroll Button Styles */
- .scroll-button {
+/* Scroll Button Styles */
+.scroll-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -291,31 +311,41 @@ footer {
 /* Contact Section */
 .contact-section {
     position: absolute;
-    top: 70px; /* Move to the top right of the hero section, just below the menu bar */
+    top: 70px;
+    /* Move to the top right of the hero section, just below the menu bar */
     right: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Slight background for contrast */
-    padding: 20px; /* Adjusted padding */
-    border-radius: 10px; /* Slightly larger radius for rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deep blue shadow effect */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Slight background for contrast */
+    padding: 20px;
+    /* Adjusted padding */
+    border-radius: 10px;
+    /* Slightly larger radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Deep blue shadow effect */
     z-index: 1000;
-    font-size: 14px; /* Smaller text for better visuals */
+    font-size: 14px;
+    /* Smaller text for better visuals */
 }
 
 .contact-section h2 {
     font-size: 20px;
     color: #2a3b5f;
-    margin-bottom: 10px; /* Increased margin for better spacing */
+    margin-bottom: 10px;
+    /* Increased margin for better spacing */
 }
 
 .contact-section p {
     font-size: 14px;
     color: #333;
-    margin-bottom: 10px; /* Spacing between paragraph and button */
+    margin-bottom: 10px;
+    /* Spacing between paragraph and button */
 }
 
 .contact-section .btn-blue {
-    font-size: 12px; /* Smaller button size */
-    padding: 6px 12px; /* Adjusted padding */
+    font-size: 12px;
+    /* Smaller button size */
+    padding: 6px 12px;
+    /* Adjusted padding */
     background-color: #2a3b5f;
     color: white;
     border-radius: 5px;
@@ -392,58 +422,151 @@ footer {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
-    gap: 30px; /* Increased gap between boxes */
-    flex-wrap: wrap; /* Allow wrapping for better responsiveness */
-    justify-content: center; /* Ensure the content is centered */
+    gap: 30px;
+    /* Increased gap between boxes */
+    flex-wrap: wrap;
+    /* Allow wrapping for better responsiveness */
+    justify-content: center;
+    /* Ensure the content is centered */
 }
 
 .meet-kesia-section .image-box {
     background-color: #ffffff;
-    padding: 30px; /* Increased padding for better spacing */
-    border-radius: 15px; /* Larger border radius for a smoother look */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for a more prominent look */
+    padding: 30px;
+    /* Increased padding for better spacing */
+    border-radius: 15px;
+    /* Larger border radius for a smoother look */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    /* Deeper shadow for a more prominent look */
     width: 100%;
-    max-width: 350px; /* Increased max width for more space */
+    max-width: 350px;
+    /* Increased max width for more space */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .meet-kesia-section .image-box:hover {
-    transform: translateY(-10px); /* Slight hover effect for the boxes */
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15); /* Increased shadow effect on hover */
+    transform: translateY(-10px);
+    /* Slight hover effect for the boxes */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+    /* Increased shadow effect on hover */
 }
 
 .meet-kesia-section img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px; /* Increased margin for better spacing */
+    margin-bottom: 20px;
+    /* Increased margin for better spacing */
 }
 
 .meet-kesia-section .image-box h3 {
-    font-size: 26px; /* Slightly increased font size for emphasis */
+    font-size: 26px;
+    /* Slightly increased font size for emphasis */
     color: #2a3b5f;
-    margin-bottom: 15px; /* Increased margin for better spacing */
+    margin-bottom: 15px;
+    /* Increased margin for better spacing */
 }
 
 .meet-kesia-section .image-box p {
-    font-size: 18px; /* Increased font size for better readability */
+    font-size: 18px;
+    /* Increased font size for better readability */
     color: #666;
-    margin-bottom: 20px; /* Increased bottom margin */
+    margin-bottom: 20px;
+    /* Increased bottom margin */
 }
 
-/* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    /* Navigation Bar */
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
+
+    /* General Reset for Mobile */
+    body,
+    html {
+        width: 100%;
+        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
     }
 
-    /* Hero Bar */
-    .hero-bar {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+    /* Navigation Bar */
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    /* Navigation Bar */
+    header nav {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        overflow-x: auto;
+        width: 100%;
+        box-sizing: border-box;
+        gap: 8px;
+        scrollbar-width: none;
+    }    
+
+    .nav-logo {
+        width: 35px;
+        height: auto;
+        flex-shrink: 0;
+        padding: 0 6px;
+    }    
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+        list-style: none;
+        margin: 0;
+        padding: 0 10px 0 55px;
+        /* Left pad equals logo width + margin */
+        width: 100%;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        box-sizing: border-box;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul li {
+        font-size: 11px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        width: 100%;
+        min-height: 220px;
+        margin-top: 0;
+        padding-top: 0;
+        text-align: center;
+        background-image: url('/assets/images/logo.png');
+        /* Replace with your real hero image */
+        background-size: contain;
+        /* zoomed out */
+        background-position: center top;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-bottom: 20px;
+    }
+
+    .hero img {
+        display: none;
+    }
+
+    /* Hide Contact Section Overlay on Mobile */
+    .contact-section {
+        display: none;
     }
 
     /* Business Card */
@@ -460,6 +583,7 @@ footer {
 
     .social-media {
         justify-content: center;
+        margin-top: 10px;
     }
 
     .card-info {
@@ -475,56 +599,6 @@ footer {
         padding: 12px 24px;
     }
 
-    /* Header */
-    header nav {
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    nav ul {
-        width: 100%;
-        justify-content: space-between;
-        margin-left: 40px;
-    }
-
-    .nav-logo {
-        width: 50px; /* Adjust the logo size if necessary */
-    }
-
-    /* Contact Section */
-    .contact-section {
-        position: absolute;
-        top: 70px; /* Moves the contact card below the header */
-        right: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 15px; /* Adjusted padding */
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        font-size: 14px;
-    }
-
-    .contact-section h2 {
-        font-size: 18px;
-        color: #2a3b5f;
-    }
-
-    .contact-section p {
-        font-size: 14px;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    /* Hero Section */
-    .hero {
-        height: 450px; /* Adjusted height for mobile */
-    }
-
-    .hero img {
-        max-width: 60%; /* Image size adjusted for mobile */
-    }
-
     /* Meet Kesia Section */
     .meet-kesia-section {
         display: flex;
@@ -532,6 +606,7 @@ footer {
         gap: 20px;
         justify-content: center;
         align-items: center;
+        padding: 20px 10px;
     }
 
     .meet-kesia-section .image-box {
@@ -542,37 +617,50 @@ footer {
     }
 
     .meet-kesia-section .image-box h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .meet-kesia-section .image-box p {
-        font-size: 16px;
-        margin-bottom: 20px;
+        font-size: 14px;
+        margin-bottom: 16px;
     }
 
     /* Info Section */
+    .info-section {
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .info-section .info-box {
-        max-width: 100%; /* Full-width for mobile */
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
         margin-bottom: 20px;
+        padding: 15px;
     }
 
     .info-section h2 {
-        font-size: 28px;
+        font-size: 24px;
         margin-bottom: 20px;
+        text-align: center;
     }
 
     .info-section .info-box h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 12px;
+        text-align: center;
     }
 
     .info-section .info-box p {
         font-size: 14px;
+        text-align: center;
     }
 
     /* Scroll Button */
     .scroll-button {
-        bottom: 10px; /* Adjusted position for mobile */
+        bottom: 10px;
         right: 10px;
         width: 45px;
         height: 45px;
