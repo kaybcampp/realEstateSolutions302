@@ -440,6 +440,10 @@ footer {
         justify-content: space-around;
     }
 
+    .contact-section {
+        display: none;
+    }    
+
     /* Hero Bar */
     .hero-bar {
         border-top-left-radius: 0;
