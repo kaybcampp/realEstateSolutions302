@@ -164,6 +164,17 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
+.hero-logo {
+    margin-top: 10px;
+}
+
+.hero-logo img {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
 /* About Section */
 .section {
     padding: 50px 20px;
@@ -434,12 +445,6 @@ footer {
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    /* Navigation Bar */
-    nav ul {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
     .contact-section {
         display: none;
     }    
@@ -479,23 +484,63 @@ footer {
         padding: 12px 24px;
     }
 
-    /* Header */
+    header {
+        padding: 0;
+    }
+    
     header nav {
-        flex-direction: row;
-        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 10px;
+        position: relative;
         width: 100%;
+        background-color: #ffffff;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
     }
-
+    
+    header nav::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+    }
+    
     nav ul {
-        width: 100%;
-        justify-content: space-between;
-        margin-left: 40px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        white-space: nowrap;
     }
-
-    .nav-logo {
-        width: 50px; /* Adjust the logo size if necessary */
+    
+    nav ul li {
+        flex-shrink: 0;
     }
-
+    
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 12px;
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight: bold;
+        color: #2a3b5f;
+        display: inline-block;
+    }
+    
+    .hero-logo {
+        margin-top: 10px;
+    }
+    
+    .hero-logo img {
+        width: 100px;
+        height: auto;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    
     /* Contact Section */
     .contact-section {
         position: absolute;
