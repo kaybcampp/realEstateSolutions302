@@ -554,25 +554,32 @@ footer {
         margin-bottom: 20px;
     }
 
-    /* Info Section */
-    .info-section .info-box {
-        max-width: 100%; /* Full-width for mobile */
-        margin-bottom: 20px;
-    }
-
-    .info-section h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
-    }
-
-    .info-section .info-box h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
-    }
-
-    .info-section .info-box p {
-        font-size: 14px;
-    }
+        /* Info Section */
+        .info-section {
+            padding: 30px 10px; /* Reduced padding for mobile */
+        }
+    
+        .info-section .info-box {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    
+        .info-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+    
+        .info-section .info-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+    
+        .info-section .info-box p {
+            font-size: 14px;
+        }
 
     /* Scroll Button */
     .scroll-button {
