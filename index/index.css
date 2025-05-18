@@ -28,18 +28,16 @@ footer {
 header {
     display: flex;
     justify-content: center;
-    /* Ensures the menu options remain centered */
     align-items: center;
     background-color: #ffffff;
     padding: 18px 20px;
     border-bottom: 2px solid #2a3b5f;
     position: fixed;
-    /* Fixes the menu bar to the top of the viewport */
     top: 0;
-    /* Ensures it is at the top of the visible page */
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
 }
 
 header nav {
@@ -69,6 +67,7 @@ nav ul {
 nav ul li {
     position: relative;
     flex-shrink: 0;
+    overflow: visible;
 }
 
 nav ul li a {
@@ -88,18 +87,18 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Submenu Styles */
 .dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
+    /* adjust based on your header height */
     left: 0;
-    background-color: #ffffff;
+    display: none;
+    background-color: #fff;
     border: 1px solid #2a3b5f;
     border-radius: 5px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 9999;
 }
 
 .dropdown:hover .dropdown-content {
@@ -137,7 +136,7 @@ nav ul li a.active {
     /* Centers the content vertically */
     align-items: center;
     /* Centers the content horizontally */
-    overflow: hidden;
+    overflow: visible;
     /* Ensures the bar doesn't extend beyond the image */
     text-align: center;
 }
@@ -497,218 +496,246 @@ footer {
     /* Increased bottom margin */
 }
 
+/* Desktop default: show desktop nav, hide mobile nav */
+.desktop-nav {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }  
+
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
+    /* Hide desktop nav, show mobile nav */
+    .desktop-nav {
+      display: none;
+    }
+  
+    .mobile-nav {
+      display: block;
+    }
+  
     .contact-section {
-        display: none;
+      display: none;
     }
-
-    /* Hero Bar */
-    .hero-bar {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
+  
+    /* Nav Wrapper */
+    .nav-scroll-wrapper {
+      display: block;
+      overflow-x: auto;
+      overflow-y: visible;
+      position: relative;
+      z-index: 1000;
+      background-color: #fff;
+      isolation: isolate;
     }
-
-    /* Business Card */
-    .business-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
+  
+    .nav-scroll-wrapper::-webkit-scrollbar {
+      display: none;
     }
-
-    .card-image img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .social-media {
-        justify-content: center;
-    }
-
-    .card-info {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .signature {
-        width: 150px;
-    }
-
-    .btn-blue {
-        padding: 12px 24px;
-    }
-
-    header {
-        padding: 0;
-    }
-
-    nav ul li {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-    }
-
+  
     header nav {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        /* <-- THE FIX */
-        overflow-x: auto;
-        white-space: nowrap;
-        padding: 18px 16px;
-        position: relative;
-        width: 100%;
-        background-color: #ffffff;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        scroll-padding-left: 16px;
-        scroll-snap-type: x mandatory;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
+      overflow: visible;
     }
-
-    header nav::-webkit-scrollbar {
-        display: none;
-    }
-
+  
     nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 12px;
-        margin: 0;
-        padding: 0 16px;
-        /* ✅ Add horizontal padding here */
-        list-style: none;
-        white-space: nowrap;
-        min-width: max-content;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 20px;
+      padding: 0 16px;
+      margin: 0;
+      list-style: none;
+      overflow: visible;
+      position: relative;
+      z-index: 1001;
+      white-space: nowrap;
     }
-
+  
     nav ul li {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        /* ✅ snap items into view */
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: visible;
     }
-
+  
     nav ul li a {
-        font-size: 14px;
-        padding: 8px 12px;
-        white-space: nowrap;
-        text-decoration: none;
-        font-weight: bold;
-        color: #2a3b5f;
-        display: inline-block;
+      font-size: 14px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a3b5f;
+      display: inline-block;
     }
-
-    .hero-logo {
-        margin-top: 10px;
+  
+    nav ul li.dropdown {
+      position: relative;
     }
-
-    .hero-logo img {
-        width: 100px;
-        height: auto;
-        display: block;
-        margin: 0 auto 20px auto;
+  
+    /* Mobile Dropdowns */
+    .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px; /* adjust to match header height */
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
     }
-
-    /* Contact Section */
-    .contact-section {
-        position: absolute;
-        top: 70px;
-        /* Moves the contact card below the header */
-        right: 10px;
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 15px;
-        /* Adjusted padding */
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        font-size: 14px;
+  
+    .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
     }
-
-    .contact-section h2 {
-        font-size: 18px;
-        color: #2a3b5f;
-    }
-
-    .contact-section p {
-        font-size: 14px;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
+  
     /* Hero Section */
     .hero {
-        height: 450px;
-        /* Adjusted height for mobile */
+      height: 450px;
     }
-
+  
     .hero img {
-        max-width: 60%;
-        /* Image size adjusted for mobile */
+      max-width: 60%;
     }
-
+  
+    .hero-bar {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+    .hero-logo {
+      margin-top: 10px;
+    }
+  
+    .hero-logo img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+  
+    /* Business Card */
+    .business-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .card-image img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .social-media {
+      justify-content: center;
+    }
+  
+    .card-info {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .signature {
+      width: 150px;
+    }
+  
+    .btn-blue {
+      padding: 12px 24px;
+    }
+  
+    /* Contact Section */
+    .contact-section {
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      font-size: 14px;
+    }
+  
+    .contact-section h2 {
+      font-size: 18px;
+      color: #2a3b5f;
+    }
+  
+    .contact-section p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
     /* Meet Kesia Section */
     .meet-kesia-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
     }
-
+  
     .meet-kesia-section .image-box {
-        width: 100%;
-        max-width: 350px;
-        padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-
+  
     .meet-kesia-section .image-box h3 {
-        font-size: 22px;
+      font-size: 22px;
     }
-
+  
     .meet-kesia-section .image-box p {
-        font-size: 16px;
-        margin-bottom: 20px;
+      font-size: 16px;
+      margin-bottom: 20px;
     }
-
+  
     /* Info Section */
     .info-section {
-        padding: 30px 10px;
-        /* Reduced padding for mobile */
+      padding: 30px 10px;
     }
-
+  
     .info-section .info-box {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-        padding: 20px;
-        box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
     }
-
+  
     .info-section h2 {
-        font-size: 28px;
-        margin-bottom: 20px;
+      font-size: 28px;
+      margin-bottom: 20px;
     }
-
+  
     .info-section .info-box h3 {
-        font-size: 22px;
-        margin-bottom: 15px;
+      font-size: 22px;
+      margin-bottom: 15px;
     }
-
+  
     .info-section .info-box p {
-        font-size: 14px;
+      font-size: 14px;
     }
-
+  
     /* Scroll Button */
     .scroll-button {
-        bottom: 10px;
-        /* Adjusted position for mobile */
-        right: 10px;
-        width: 45px;
-        height: 45px;
+      bottom: 10px;
+      right: 10px;
+      width: 45px;
+      height: 45px;
     }
-
+  
     .scroll-button svg {
-        width: 20px;
-        height: 20px;
+      width: 20px;
+      height: 20px;
     }
-}
+  }  
