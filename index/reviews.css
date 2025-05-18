@@ -21,28 +21,27 @@ body {
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 18px 20px;
     border-bottom: 2px solid #2a3b5f;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
 }
 
 header nav {
     display: flex;
     justify-content: center;
+    /* Centers the menu options */
     align-items: center;
     width: 100%;
-}
-
-header .nav-logo {
-    position: absolute;
-    left: 20px;
+    overflow: visible;
+    white-space: normal;
 }
 
 nav ul {
@@ -52,10 +51,17 @@ nav ul {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap if needed */
+    width: 100%;
+    overflow: visible;
 }
 
 nav ul li {
     position: relative;
+    flex-shrink: 0;
+    overflow: visible;
 }
 
 nav ul li a {
@@ -63,8 +69,9 @@ nav ul li a {
     color: #2a3b5f;
     font-weight: bold;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 8px 14px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 nav ul li a:hover,
@@ -74,22 +81,18 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-}
-
 .dropdown .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
+    /* adjust based on your header height */
     left: 0;
-    background-color: #ffffff;
+    display: none;
+    background-color: #fff;
     border: 1px solid #2a3b5f;
     border-radius: 5px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 9999;
 }
 
 .dropdown:hover .dropdown-content {
@@ -108,7 +111,7 @@ nav ul li a.active {
 .dropdown-content a:hover {
     background-color: #2a3b5f;
     color: #ffffff;
-}
+};
 
 /* Hero Section */
 .hero {
@@ -294,52 +297,98 @@ footer {
     transition: filter 0.3s ease;
 }
 
-/* Mobile Styles */
+/* Desktop default: show desktop nav, hide mobile nav */
+.desktop-nav {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }  
+
+/* Mobile and Tablet Styles */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 10px;
+    /* Hide desktop nav, show mobile nav */
+    .desktop-nav {
+      display: none;
     }
-
-    header .nav-logo {
-        width: 35px; /* Adjust logo size on mobile */
+  
+    .mobile-nav {
+      display: block;
     }
-
+  
+    .nav-scroll-wrapper {
+      display: block;
+      overflow-x: auto;
+      overflow-y: visible;
+      position: relative;
+      z-index: 1000;
+      background-color: #fff;
+      isolation: isolate;
+    }
+  
+    .nav-scroll-wrapper::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome/Safari */
+    }
+  
+    header nav {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
+      overflow: visible; /* allow dropdowns */
+    }
+  
     nav ul {
-        flex-direction: column; /* Stack the navigation items vertically */
-        gap: 10px;
-        width: 100%; /* Ensure the navigation takes up the full width */
-        justify-content: flex-start;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 20px;
+      padding: 0 16px;
+      margin: 0;
+      list-style: none;
+      overflow: visible;
+      position: relative;
+      z-index: 1001;
+      white-space: nowrap;
     }
-
-    .board {
-        padding: 20px; /* Adjust padding for mobile */
-        grid-template-columns: 1fr; /* Stack reviews vertically on smaller screens */
-        gap: 10px; /* Ensure reviews have some space */
+  
+    nav ul li {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: visible;
     }
-
-    .pinned-review {
-        width: 100%; /* Full width on mobile for reviews */
-        margin: 10px 0; /* Vertical margin for spacing */
-        max-width: none; /* Remove max-width for full screen */
+  
+    nav ul li a {
+      font-size: 14px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a3b5f;
+      display: inline-block;
     }
-
-    .modal {
-        width: 90%; /* Modal width adjusted for smaller screens */
+  
+    nav ul li.dropdown {
+      position: relative;
     }
-
-    .read-more {
-        font-size: 14px; /* Smaller font size for buttons */
-        padding: 5px 10px; /* Reduced padding */
+  
+    /* Mobile Dropdowns */
+    .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px; /* adjust to match header height */
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
     }
-
-    .scroll-button {
-        width: 45px; /* Adjust scroll button size */
-        height: 45px;
+  
+    .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
     }
-
-    /* Additional mobile styling for text and layout adjustments */
-    .modal-content {
-        padding: 15px;
-        text-align: center; /* Ensure the text remains centered */
-    }
-}
+  }  
