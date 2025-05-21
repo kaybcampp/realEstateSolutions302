@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 20vh; /* Reduced height for better balance */
+            height: 20vh;
+            /* Reduced height for better balance */
             background-color: #2a3b5f;
             color: white;
             text-align: center;
@@ -23,7 +25,8 @@
         .hero h1 {
             font-size: 28px;
             margin: 0;
-            text-transform: none; /* Removed uppercase styling */
+            text-transform: none;
+            /* Removed uppercase styling */
         }
 
         /* Styling for the unavailable homes section */
@@ -38,7 +41,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 30px auto;
-            max-width: 800px; /* Ensuring content isn't too stretched */
+            max-width: 800px;
+            /* Ensuring content isn't too stretched */
         }
 
         .unavailable-section h1 {
@@ -107,33 +111,94 @@
             text-align: center;
             padding: 10px 0;
         }
+
+        @media (max-width: 600px) {
+            .unavailable-section {
+                padding: 30px 15px;
+            }
+
+            .unavailable-section h1 {
+                font-size: 20px;
+            }
+
+            .unavailable-section p {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .unavailable-section .btn-blue {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                padding: 12px;
+                font-size: 16px;
+                box-sizing: border-box;
+                margin-top: 10px;
+            }
+
+            .unavailable-section p a.btn-blue {
+                display: block;
+                margin-top: 10px;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Top Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#about">About Me</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Listings</a>
-                    <div class="dropdown-content">
-                        <a href="available-homes.html">Available Homes</a>
-                        <a href="sold-homes.html">Sold Homes</a>
-                    </div>
-                </li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <!-- More Dropdown -->
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">More</a>
-                    <div class="dropdown-content">
-                        <a href="blog.html">Blog</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+    <!-- ✅ DESKTOP NAV -->
+    <header class="desktop-nav">
+        <div class="nav-scroll-wrapper">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Me</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Listings</a>
+                        <div class="dropdown-content">
+                            <a href="index/available-homes.html">Available Homes</a>
+                            <a href="index/sold-homes.html">Sold Homes</a>
+                        </div>
+                    </li>
+                    <li><a href="/index/reviews.html">Reviews</a></li>
+                    <li><a href="/index/contact.html">Contact Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">More</a>
+                        <div class="dropdown-content">
+                            <a href="index/blog.html">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ✅ MOBILE-ONLY NAV -->
+    <header class="mobile-nav">
+        <div class="nav-scroll-wrapper">
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="index.html" class="dropbtn">Home</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Listings</a>
+                        <div class="dropdown-content">
+                            <a href="/index/available-homes.html">Available Homes</a>
+                            <a href="/index/sold-homes.html">Sold Homes</a>
+                        </div>
+                    </li>
+                    <li><a href="/index/reviews.html">Reviews</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">More</a>
+                        <div class="dropdown-content">
+                            <a href="/index/contact.html">Contact Us</a>
+                            <a href="/index/blog.html">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Available Homes Header -->
@@ -145,7 +210,8 @@
     <section class="unavailable-section">
         <h1>This Section is Coming Soon!</h1>
         <p>We are working on making our available homes list fully accessible. Please check back soon!</p>
-        <p>In the meantime, you can <a href="contact.html" class="btn-blue">contact us</a> and subscribe to our newsletter for updates when this feature is available.</p>
+        <p>In the meantime, you can <a href="contact.html" class="btn-blue">contact us</a> and subscribe to our
+            newsletter for updates when this feature is available.</p>
     </section>
 
     <!-- Scroll Button
@@ -153,7 +219,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
             <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/>
         </svg>
-    </button> --> 
+    </button> -->
 
     <!-- Footer -->
     <footer>
@@ -194,5 +260,5 @@
     </script>
 
 </body>
-</html>
 
+</html>
