@@ -82,10 +82,10 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
+/* Default for desktop */
 .dropdown .dropdown-content {
-    position: fixed;
-    top: 60px;
-    /* adjust based on your header height */
+    position: absolute;
+    top: 100%;
     left: 0;
     display: none;
     background-color: #fff;
@@ -94,6 +94,26 @@ nav ul li a.active {
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 9999;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px;
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+  }
+
+  .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
+  }
 }
 
 .dropdown:hover .dropdown-content {
