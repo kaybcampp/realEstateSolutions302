@@ -6,8 +6,18 @@ body {
     box-sizing: border-box;
     background-color: #f7f7f7;
     color: #333333;
+<<<<<<< HEAD
     overflow-x: hidden;
     /* Prevent horizontal scrolling */
+=======
+    /* Removed overflow-x: hidden to allow horizontal nav scroll */
+}
+
+main,
+section,
+footer {
+    overflow-x: hidden;
+>>>>>>> temp-fix
 }
 
 /* Top Navigation Bar */
@@ -23,18 +33,26 @@ body {
 header {
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     /* Ensures the menu options remain centered */
+=======
+>>>>>>> temp-fix
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 18px 20px;
     border-bottom: 2px solid #2a3b5f;
     position: fixed;
+<<<<<<< HEAD
     /* Fixes the menu bar to the top of the viewport */
     top: 0;
     /* Ensures it is at the top of the visible page */
+=======
+    top: 0;
+>>>>>>> temp-fix
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
 }
 
 header nav {
@@ -43,12 +61,17 @@ header nav {
     /* Centers the menu options */
     align-items: center;
     width: 100%;
+<<<<<<< HEAD
 }
 
 header .nav-logo {
     position: absolute;
     /* Positions the logo at the left of the header */
     left: 20px;
+=======
+    overflow: visible;
+    white-space: normal;
+>>>>>>> temp-fix
 }
 
 nav ul {
@@ -59,11 +82,16 @@ nav ul {
     gap: 20px;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap if needed */
     width: 100%;
+    overflow: visible;
 }
 
 nav ul li {
     position: relative;
+    flex-shrink: 0;
+    overflow: visible;
 }
 
 nav ul li a {
@@ -71,8 +99,9 @@ nav ul li a {
     color: #2a3b5f;
     font-weight: bold;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 8px 14px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 nav ul li a:hover,
@@ -82,18 +111,38 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Submenu Styles */
+/* Default for desktop */
 .dropdown .dropdown-content {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffffff;
+    display: none;
+    background-color: #fff;
     border: 1px solid #2a3b5f;
     border-radius: 5px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 9999;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px;
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+  }
+
+  .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
+  }
 }
 
 .dropdown:hover .dropdown-content {
@@ -117,8 +166,27 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     position: relative;
+<<<<<<< HEAD
     width: 100%;
     height: 180px;
+=======
+    background-color: #ffffff;
+    /* White background for the hero section */
+    color: #333333;
+    margin-top: 0;
+    /* Removes gap between menu and image */
+    height: 600px;
+    /* Adjusted height for a less overwhelming image */
+    display: flex;
+    flex-direction: column;
+    /* Ensures the bar is positioned at the bottom */
+    justify-content: center;
+    /* Centers the content vertically */
+    align-items: center;
+    /* Centers the content horizontally */
+    overflow: visible;
+    /* Ensures the bar doesn't extend beyond the image */
+>>>>>>> temp-fix
     text-align: center;
     padding-top: 60px;
     /* 👈 reserve space for nav */
@@ -181,6 +249,17 @@ nav ul li a.active {
 .hero-bar .btn-blue:hover {
     background-color: #1f2a4d;
     transform: translateY(-2px);
+}
+
+.hero-logo {
+    margin-top: 10px;
+}
+
+.hero-logo img {
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
 }
 
 /* About Section */
@@ -476,6 +555,7 @@ footer {
     /* Increased bottom margin */
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
 
     /* General Reset for Mobile */
@@ -607,26 +687,223 @@ footer {
         justify-content: center;
         align-items: center;
         padding: 20px 10px;
-    }
+=======
+/* Desktop default: show desktop nav, hide mobile nav */
+.desktop-nav {
+    display: block;
+  }
+  
+  .mobile-nav {
+    display: none;
+  }  
 
+/* Mobile and Tablet Styles */
+@media (max-width: 768px) {
+    /* Hide desktop nav, show mobile nav */
+    .desktop-nav {
+      display: none;
+    }
+  
+    .mobile-nav {
+      display: block;
+    }
+  
+    .contact-section {
+      display: none;
+    }
+  
+    /* Nav Wrapper */
+    .nav-scroll-wrapper {
+      display: block;
+      overflow-x: auto;
+      overflow-y: visible;
+      position: relative;
+      z-index: 1000;
+      background-color: #fff;
+      isolation: isolate;
+    }
+  
+    .nav-scroll-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+  
+    header nav {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      width: max-content;
+      overflow: visible;
+    }
+  
+    nav ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 20px;
+      padding: 0 16px;
+      margin: 0;
+      list-style: none;
+      overflow: visible;
+      position: relative;
+      z-index: 1001;
+      white-space: nowrap;
+    }
+  
+    nav ul li {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      position: relative;
+      overflow: visible;
+    }
+  
+    nav ul li a {
+      font-size: 14px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      text-decoration: none;
+      font-weight: bold;
+      color: #2a3b5f;
+      display: inline-block;
+    }
+  
+    nav ul li.dropdown {
+      position: relative;
+    }
+  
+    /* Mobile Dropdowns */
+    .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px; /* adjust to match header height */
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+    }
+  
+    .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  
+    /* Hero Section */
+    .hero {
+      height: 450px;
+    }
+  
+    .hero img {
+      max-width: 60%;
+    }
+  
+    .hero-bar {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+    .hero-logo {
+      margin-top: 10px;
+    }
+  
+    .hero-logo img {
+      width: 100px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+  
+    /* Business Card */
+    .business-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .card-image img {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .social-media {
+      justify-content: center;
+    }
+  
+    .card-info {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .signature {
+      width: 150px;
+    }
+  
+    .btn-blue {
+      padding: 12px 24px;
+    }
+  
+    /* Contact Section */
+    .contact-section {
+      position: absolute;
+      top: 70px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      font-size: 14px;
+    }
+  
+    .contact-section h2 {
+      font-size: 18px;
+      color: #2a3b5f;
+    }
+  
+    .contact-section p {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+  
+    /* Meet Kesia Section */
+    .meet-kesia-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+>>>>>>> temp-fix
+    }
+  
     .meet-kesia-section .image-box {
-        width: 100%;
-        max-width: 350px;
-        padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     }
-
+  
     .meet-kesia-section .image-box h3 {
+<<<<<<< HEAD
         font-size: 20px;
+=======
+      font-size: 22px;
+>>>>>>> temp-fix
     }
-
+  
     .meet-kesia-section .image-box p {
+<<<<<<< HEAD
         font-size: 14px;
         margin-bottom: 16px;
+=======
+      font-size: 16px;
+      margin-bottom: 20px;
+>>>>>>> temp-fix
     }
-
+  
     /* Info Section */
     .info-section {
+<<<<<<< HEAD
         padding: 20px 15px;
         display: flex;
         flex-direction: column;
@@ -639,35 +916,67 @@ footer {
         box-sizing: border-box;
         margin-bottom: 20px;
         padding: 15px;
+=======
+      padding: 30px 10px;
     }
-
+  
+    .info-section .info-box {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+>>>>>>> temp-fix
+    }
+  
     .info-section h2 {
+<<<<<<< HEAD
         font-size: 24px;
         margin-bottom: 20px;
         text-align: center;
+=======
+      font-size: 28px;
+      margin-bottom: 20px;
+>>>>>>> temp-fix
     }
-
+  
     .info-section .info-box h3 {
+<<<<<<< HEAD
         font-size: 18px;
         margin-bottom: 12px;
         text-align: center;
+=======
+      font-size: 22px;
+      margin-bottom: 15px;
+>>>>>>> temp-fix
     }
-
+  
     .info-section .info-box p {
+<<<<<<< HEAD
         font-size: 14px;
         text-align: center;
+=======
+      font-size: 14px;
+>>>>>>> temp-fix
     }
-
+  
     /* Scroll Button */
     .scroll-button {
+<<<<<<< HEAD
         bottom: 10px;
         right: 10px;
         width: 45px;
         height: 45px;
+=======
+      bottom: 10px;
+      right: 10px;
+      width: 45px;
+      height: 45px;
+>>>>>>> temp-fix
     }
-
+  
     .scroll-button svg {
-        width: 20px;
-        height: 20px;
+      width: 20px;
+      height: 20px;
     }
-}
+  }  

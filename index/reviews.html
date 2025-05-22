@@ -5,37 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews - Real Estate Solutions 302</title>
-    <link rel="stylesheet" href="reviews.css">
+    <link rel="stylesheet" href="reviews.css?v=3">
     <link rel="icon" href="/assets/images/logo.png" type="image/png"> <!-- Favicon Link -->
 </head>
 
 <body>
-    <!-- Top Navigation Bar -->
-    <header>
-        <nav>
-            <img src="/assets/images/realLogo.jpg" alt="Logo" class="nav-logo"> <!-- Logo Image -->
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../index.html#about">About Me</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Listings</a>
-                    <div class="dropdown-content">
-                        <a href="available-homes.html">Available Homes</a>
-                        <a href="sold-homes.html">Sold Homes</a>
-                    </div>
-                </li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">More</a>
-                    <div class="dropdown-content">
-                        <a href="blog.html">Blog</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+     <!-- Top Navigation Bar -->
+<!-- ✅ DESKTOP NAV -->
+<header class="desktop-nav">
+    <div class="nav-scroll-wrapper">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Me</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Listings</a>
+            <div class="dropdown-content">
+              <a href="index/available-homes.html">Available Homes</a>
+              <a href="index/sold-homes.html">Sold Homes</a>
+            </div>
+          </li>
+          <li><a href="/index/reviews.html">Reviews</a></li>
+          <li><a href="/index/contact.html">Contact Us</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">More</a>
+            <div class="dropdown-content">
+              <a href="index/blog.html">Blog</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+   <!-- ✅ MOBILE-ONLY NAV -->
+   <header class="mobile-nav">
+    <div class="nav-scroll-wrapper">
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="/index.html" class="dropbtn">Home</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">Listings</a>
+            <div class="dropdown-content">
+              <a href="/index/available-homes.html">Available Homes</a>
+              <a href="/index/sold-homes.html">Sold Homes</a>
+            </div>
+          </li>
+          <li><a href="/index/reviews.html">Reviews</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn">More</a>
+            <div class="dropdown-content">
+              <a href="/index/contact.html">Contact Us</a>
+              <a href="/index/blog.html">Blog</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
     <!-- Reviews Section -->
     <main class="board">
         <!-- Review 1 -->

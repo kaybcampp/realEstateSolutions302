@@ -14,35 +14,35 @@ body {
 
 /* Top Navigation Bar */
 .nav-logo {
-    width: 40px; /* Adjust as per your needs */
+    width: 40px;
+    /* Adjust as per your needs */
     height: auto;
     margin-right: 20px;
 }
 
 header {
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px 20px;
+    padding: 18px 20px;
     border-bottom: 2px solid #2a3b5f;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible;
 }
 
 header nav {
     display: flex;
     justify-content: center;
+    /* Centers the menu options */
     align-items: center;
     width: 100%;
-}
-
-header .nav-logo {
-    position: absolute;
-    left: 20px;
+    overflow: visible;
+    white-space: normal;
 }
 
 nav ul {
@@ -52,10 +52,17 @@ nav ul {
     display: flex;
     gap: 20px;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows items to wrap if needed */
+    width: 100%;
+    overflow: visible;
 }
 
 nav ul li {
     position: relative;
+    flex-shrink: 0;
+    overflow: visible;
 }
 
 nav ul li a {
@@ -63,8 +70,9 @@ nav ul li a {
     color: #2a3b5f;
     font-weight: bold;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 8px 14px;
     transition: color 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
 }
 
 nav ul li a:hover,
@@ -74,22 +82,38 @@ nav ul li a.active {
     border-radius: 5px;
 }
 
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-}
-
+/* Default for desktop */
 .dropdown .dropdown-content {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffffff;
+    display: none;
+    background-color: #fff;
     border: 1px solid #2a3b5f;
     border-radius: 5px;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+    z-index: 9999;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .mobile-nav .dropdown .dropdown-content {
+      position: fixed;
+      top: 60px;
+      left: 5%;
+      right: 5%;
+      display: none;
+      background-color: #fff;
+      border: 1px solid #2a3b5f;
+      border-radius: 5px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+  }
+
+  .mobile-nav .dropdown:hover .dropdown-content {
+      display: block;
+  }
 }
 
 .dropdown:hover .dropdown-content {
@@ -116,17 +140,22 @@ nav ul li a.active {
     padding: 50px 20px;
     background: #2a3b5f;
     color: #ffffff;
-    margin-top: 60px; /* Ensure hero section starts below the fixed menu */
+    margin-top: 60px;
+    /* Ensure hero section starts below the fixed menu */
 }
 
 /* Reviews Section */
 .board {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Ensure 2 items per row */
-    gap: 10px; /* Adjust space between reviews */
+    grid-template-columns: repeat(2, 1fr);
+    /* Ensure 2 items per row */
+    gap: 10px;
+    /* Adjust space between reviews */
     justify-items: center;
-    align-items: start; /* Start aligning reviews from the top */
-    padding: 40px 0; /* Adjust top and bottom padding */
+    align-items: start;
+    /* Start aligning reviews from the top */
+    padding: 40px 0;
+    /* Adjust top and bottom padding */
     min-height: 100vh;
     margin-top: 20px;
     box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -136,9 +165,12 @@ nav ul li a.active {
 
 /* Pinned Reviews */
 .pinned-review {
-    width: 100%; /* Full width within its grid cell */
-    max-width: 280px; /* Ensures the reviews are not too wide */
-    margin: 5px; /* Reduced margin between reviews */
+    width: 100%;
+    /* Full width within its grid cell */
+    max-width: 280px;
+    /* Ensures the reviews are not too wide */
+    margin: 5px;
+    /* Reduced margin between reviews */
     padding: 20px;
     background-color: #ffe599;
     border: 2px solid #f1c232;
@@ -183,8 +215,8 @@ footer {
     width: 100%;
 }
 
- /* Scroll Button Styles */
- .scroll-button {
+/* Scroll Button Styles */
+.scroll-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -248,13 +280,18 @@ footer {
 /* Modal Content Centering */
 .modal-content {
     padding: 20px;
-    text-align: center; /* This centers the text inside the modal */
+    text-align: center;
+    /* This centers the text inside the modal */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    width: 100%; /* Ensure the content takes up the full width */
-    box-sizing: border-box; /* Include padding in width calculation */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
+    width: 100%;
+    /* Ensure the content takes up the full width */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
 }
 
 .modal .close-btn {
@@ -296,50 +333,143 @@ footer {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
-    header {
-        padding: 10px 10px;
+    /* Mobile and Tablet Styles */
+
+    .desktop-nav {
+        display: none;
     }
 
-    header .nav-logo {
-        width: 35px; /* Adjust logo size on mobile */
+    .mobile-nav {
+        display: block;
+    }
+
+    .contact-section {
+        display: none;
+    }
+
+    /* Nav Wrapper */
+    .nav-scroll-wrapper {
+        display: block;
+        overflow-x: auto;
+        overflow-y: visible;
+        position: relative;
+        z-index: 1000;
+        background-color: #fff;
+        isolation: isolate;
+    }
+
+    .nav-scroll-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        width: max-content;
+        overflow: visible;
     }
 
     nav ul {
-        flex-direction: column; /* Stack the navigation items vertically */
-        gap: 10px;
-        width: 100%; /* Ensure the navigation takes up the full width */
-        justify-content: flex-start;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 20px;
+        padding: 0 16px;
+        margin: 0;
+        list-style: none;
+        overflow: visible;
+        position: relative;
+        z-index: 1001;
+        white-space: nowrap;
+    }
+
+    nav ul li {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        position: relative;
+        overflow: visible;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 12px;
+        white-space: nowrap;
+        text-decoration: none;
+        font-weight: bold;
+        color: #2a3b5f;
+        display: inline-block;
+    }
+
+    nav ul li.dropdown {
+        position: relative;
+    }
+
+    /* Mobile Dropdowns */
+    .mobile-nav .dropdown .dropdown-content {
+        position: fixed;
+        top: 60px;
+        /* adjust to match header height */
+        left: 5%;
+        right: 5%;
+        display: none;
+        background-color: #fff;
+        border: 1px solid #2a3b5f;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+    }
+
+    .mobile-nav .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .hero {
+        margin-top: 100px;
+        /* prevent header overlap */
     }
 
     .board {
-        padding: 20px; /* Adjust padding for mobile */
-        grid-template-columns: 1fr; /* Stack reviews vertically on smaller screens */
-        gap: 10px; /* Ensure reviews have some space */
-    }
+        padding-top: 100px; /* space below fixed nav */
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+        grid-template-columns: 1fr; /* stack vertically on mobile */
+        gap: 10px;
+        box-sizing: border-box;
+      }      
 
     .pinned-review {
-        width: 100%; /* Full width on mobile for reviews */
-        margin: 10px 0; /* Vertical margin for spacing */
-        max-width: none; /* Remove max-width for full screen */
+        width: 100%;
+        /* Full width on mobile for reviews */
+        margin: 10px 0;
+        /* Vertical margin for spacing */
+        max-width: none;
+        /* Remove max-width for full screen */
     }
 
     .modal {
-        width: 90%; /* Modal width adjusted for smaller screens */
+        width: 90%;
+        /* Modal width adjusted for smaller screens */
     }
 
     .read-more {
-        font-size: 14px; /* Smaller font size for buttons */
-        padding: 5px 10px; /* Reduced padding */
+        font-size: 14px;
+        /* Smaller font size for buttons */
+        padding: 5px 10px;
+        /* Reduced padding */
     }
 
     .scroll-button {
-        width: 45px; /* Adjust scroll button size */
+        width: 45px;
+        /* Adjust scroll button size */
         height: 45px;
     }
 
     /* Additional mobile styling for text and layout adjustments */
     .modal-content {
         padding: 15px;
-        text-align: center; /* Ensure the text remains centered */
+        text-align: center;
+        /* Ensure the text remains centered */
     }
 }
