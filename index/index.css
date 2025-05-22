@@ -6,10 +6,6 @@ body {
     box-sizing: border-box;
     background-color: #f7f7f7;
     color: #333333;
-<<<<<<< HEAD
-    overflow-x: hidden;
-    /* Prevent horizontal scrolling */
-=======
     /* Removed overflow-x: hidden to allow horizontal nav scroll */
 }
 
@@ -17,7 +13,6 @@ main,
 section,
 footer {
     overflow-x: hidden;
->>>>>>> temp-fix
 }
 
 /* Top Navigation Bar */
@@ -33,22 +28,12 @@ footer {
 header {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-    /* Ensures the menu options remain centered */
-=======
->>>>>>> temp-fix
     align-items: center;
     background-color: #ffffff;
     padding: 18px 20px;
     border-bottom: 2px solid #2a3b5f;
     position: fixed;
-<<<<<<< HEAD
-    /* Fixes the menu bar to the top of the viewport */
     top: 0;
-    /* Ensures it is at the top of the visible page */
-=======
-    top: 0;
->>>>>>> temp-fix
     width: 100%;
     z-index: 1000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,17 +46,8 @@ header nav {
     /* Centers the menu options */
     align-items: center;
     width: 100%;
-<<<<<<< HEAD
-}
-
-header .nav-logo {
-    position: absolute;
-    /* Positions the logo at the left of the header */
-    left: 20px;
-=======
     overflow: visible;
     white-space: normal;
->>>>>>> temp-fix
 }
 
 nav ul {
@@ -166,10 +142,6 @@ nav ul li a.active {
 /* Hero Section */
 .hero {
     position: relative;
-<<<<<<< HEAD
-    width: 100%;
-    height: 180px;
-=======
     background-color: #ffffff;
     /* White background for the hero section */
     color: #333333;
@@ -186,7 +158,6 @@ nav ul li a.active {
     /* Centers the content horizontally */
     overflow: visible;
     /* Ensures the bar doesn't extend beyond the image */
->>>>>>> temp-fix
     text-align: center;
     padding-top: 60px;
     /* 👈 reserve space for nav */
@@ -555,139 +526,6 @@ footer {
     /* Increased bottom margin */
 }
 
-<<<<<<< HEAD
-@media (max-width: 768px) {
-
-    /* General Reset for Mobile */
-    body,
-    html {
-        width: 100%;
-        overflow-x: hidden;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Navigation Bar */
-    header {
-        position: relative;
-        z-index: 1000;
-    }
-
-    /* Navigation Bar */
-    header nav {
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        overflow-x: auto;
-        width: 100%;
-        box-sizing: border-box;
-        gap: 8px;
-        scrollbar-width: none;
-    }    
-
-    .nav-logo {
-        width: 35px;
-        height: auto;
-        flex-shrink: 0;
-        padding: 0 6px;
-    }    
-
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 12px;
-        list-style: none;
-        margin: 0;
-        padding: 0 10px 0 55px;
-        /* Left pad equals logo width + margin */
-        width: 100%;
-        overflow-x: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-        box-sizing: border-box;
-    }
-
-    nav ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    nav ul li {
-        font-size: 11px;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-
-    /* Hero Section */
-    .hero {
-        width: 100%;
-        min-height: 220px;
-        margin-top: 0;
-        padding-top: 0;
-        text-align: center;
-        background-image: url('/assets/images/logo.png');
-        /* Replace with your real hero image */
-        background-size: contain;
-        /* zoomed out */
-        background-position: center top;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        box-sizing: border-box;
-        padding-bottom: 20px;
-    }
-
-    .hero img {
-        display: none;
-    }
-
-    /* Hide Contact Section Overlay on Mobile */
-    .contact-section {
-        display: none;
-    }
-
-    /* Business Card */
-    .business-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .card-image img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .social-media {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .card-info {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .signature {
-        width: 150px;
-    }
-
-    .btn-blue {
-        padding: 12px 24px;
-    }
-
-    /* Meet Kesia Section */
-    .meet-kesia-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-        padding: 20px 10px;
-=======
 /* Desktop default: show desktop nav, hide mobile nav */
 .desktop-nav {
     display: block;
@@ -873,7 +711,6 @@ footer {
       gap: 20px;
       justify-content: center;
       align-items: center;
->>>>>>> temp-fix
     }
   
     .meet-kesia-section .image-box {
@@ -884,39 +721,16 @@ footer {
     }
   
     .meet-kesia-section .image-box h3 {
-<<<<<<< HEAD
-        font-size: 20px;
-=======
       font-size: 22px;
->>>>>>> temp-fix
     }
   
     .meet-kesia-section .image-box p {
-<<<<<<< HEAD
-        font-size: 14px;
-        margin-bottom: 16px;
-=======
       font-size: 16px;
       margin-bottom: 20px;
->>>>>>> temp-fix
     }
   
     /* Info Section */
     .info-section {
-<<<<<<< HEAD
-        padding: 20px 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .info-section .info-box {
-        max-width: 100%;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 20px;
-        padding: 15px;
-=======
       padding: 30px 10px;
     }
   
@@ -926,53 +740,28 @@ footer {
       margin-bottom: 20px;
       padding: 20px;
       box-sizing: border-box;
->>>>>>> temp-fix
     }
   
     .info-section h2 {
-<<<<<<< HEAD
-        font-size: 24px;
-        margin-bottom: 20px;
-        text-align: center;
-=======
       font-size: 28px;
       margin-bottom: 20px;
->>>>>>> temp-fix
     }
   
     .info-section .info-box h3 {
-<<<<<<< HEAD
-        font-size: 18px;
-        margin-bottom: 12px;
-        text-align: center;
-=======
       font-size: 22px;
       margin-bottom: 15px;
->>>>>>> temp-fix
     }
   
     .info-section .info-box p {
-<<<<<<< HEAD
-        font-size: 14px;
-        text-align: center;
-=======
       font-size: 14px;
->>>>>>> temp-fix
     }
   
     /* Scroll Button */
     .scroll-button {
-<<<<<<< HEAD
-        bottom: 10px;
-        right: 10px;
-        width: 45px;
-        height: 45px;
-=======
       bottom: 10px;
       right: 10px;
       width: 45px;
       height: 45px;
->>>>>>> temp-fix
     }
   
     .scroll-button svg {
