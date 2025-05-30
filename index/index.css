@@ -171,31 +171,133 @@ nav ul li a.active {
     justify-content: center;
 }
 
-.hero img {
-    max-width: 30%;
-    /* Makes the hero image much smaller */
+.hero {
+    position: relative;
+    background-color: #ffffff;
+    color: #333333;
+    margin-top: 0;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    text-align: center;
+    padding-top: 60px;
+    background-image: url('/assets/images/logo.png');
+    background-size: 400px auto; /* 👈 Smaller background image */
+    background-position: center center; /* 👈 Center it */
+    background-repeat: no-repeat;
+}
+
+.hero-logo {
+    position: relative;
+    z-index: 2; /* 👈 Ensure it's above background */
+    margin-top: 10px;
+}
+
+.hero-logo img {
+    width: 250px; /* 👈 Adjusted size for the logo */
+    height: auto;
     display: block;
-    /* Makes the image behave as a block element */
+    margin: 0 auto 20px auto;
+}
+
+.hero {
+    position: relative;
+    background-color: #ffffff;
+    color: #333333;
+    margin-top: 0;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    text-align: center;
+    padding-top: 60px;
+    background-image: url('/assets/images/logo.png'); /* Background image stays */
+    background-size: 400px auto; /* Smaller background */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* This is the real logo image on top */
+.hero-logo {
+    position: relative;
+    z-index: 2; /* Ensures it is above the background */
+    margin-top: 10px;
+}
+
+.hero-logo img {
+    width: 250px; /* Adjust to fit your preference */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* If you have a second hero img directly inside .hero, hide it */
+.hero > img {
+    display: none; /* Hides the duplicate image */
 }
 
 /* Hero Bar */
 .hero-bar {
     width: 100%;
-    /* Stretches across the entire hero section */
     background-color: rgba(255, 255, 255, 0.7);
-    /* Increased translucency */
     padding: 8px;
-    /* Reduced padding for a shorter bar */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    /* Centers the content */
 }
 
+.hero {
+    position: relative;
+    background-color: #ffffff;
+    margin-top: 0;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Push logo toward bottom */
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* Background image as a separate layer */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/logo.png'); /* <-- background image */
+    background-size: 400px auto; /* <-- smaller background image */
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.15; /* lighter background */
+    z-index: 1;
+}
+
+/* Real Logo */
+.hero-logo {
+    position: relative;
+    z-index: 2; /* Real logo above background */
+    margin-bottom: 30px;
+}
+
+.hero-logo img {
+    width: 80px; /* ⬅️ about 1/3 of 250px */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Hero Bar Text Styles (if you have a hero-bar) */
 .hero-bar h1 {
     font-size: 28px;
     color: #2a3b5f;
     margin-bottom: 5px;
-    /* Reduced margin for compact layout */
 }
 
 .hero-bar p {
@@ -208,7 +310,6 @@ nav ul li a.active {
     background-color: #2a3b5f;
     color: #ffffff;
     padding: 8px 16px;
-    /* Slightly reduced button size */
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
@@ -220,17 +321,6 @@ nav ul li a.active {
 .hero-bar .btn-blue:hover {
     background-color: #1f2a4d;
     transform: translateY(-2px);
-}
-
-.hero-logo {
-    margin-top: 10px;
-}
-
-.hero-logo img {
-    width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;
 }
 
 /* About Section */
