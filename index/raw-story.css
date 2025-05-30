@@ -282,8 +282,20 @@
   }
 
   /* FB Video Mobile */
+  .fb-video-fixed {
+    position: relative;
+    width: 100%;
+    padding-top: 80%;
+    overflow: hidden;
+    height: 0;
+  }
+
   .fb-video-fixed iframe {
-    height: auto;
-    aspect-ratio: 16 / 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
 }
