@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- Top Navigation Bar -->
     <!-- ✅ DESKTOP NAV -->
     <header class="desktop-nav">
         <div class="nav-scroll-wrapper">
@@ -21,7 +20,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Listings</a>
                         <div class="dropdown-content">
-                            <a href="/index/available-homes.html">Available Homes</a>
+                            <a href="https://realestatesolutions302.com/" target="_blank"
+                                rel="noopener noreferrer">Available Homes</a>
                             <a href="/index/sold-homes.html">Sold Homes</a>
                             <a href="/index/raw-story.html">New Construction Projects</a>
                         </div>
@@ -50,7 +50,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropbtn">Listings</a>
                         <div class="dropdown-content">
-                            <a href="/index/available-homes.html">Available Homes</a>
+                            <a href="https://realestatesolutions302.com/" target="_blank"
+                                rel="noopener noreferrer">Available Homes</a>
                             <a href="/index/sold-homes.html">Sold Homes</a>
                             <a href="/index/raw-story.html">New Construction Projects</a>
                         </div>
@@ -107,7 +108,8 @@
             <a href="blog-post4.html">Read More</a>
         </article>
         <article class="blog-post">
-            <img src="/assets/images/r2 (2).jpg" alt="Unlocking Opportunities: Delaware's Exciting New Housing Programs">
+            <img src="/assets/images/r2 (2).jpg"
+                alt="Unlocking Opportunities: Delaware's Exciting New Housing Programs">
             <h2>Unlocking Opportunities: Delaware's Exciting New Housing Programs</h2>
             <p>Delaware’s housing market is evolving with exciting new programs designed to support renters, first-time
                 homebuyers, and those seeking affordable housing options. Here's a closer look at the programs set to
@@ -124,14 +126,14 @@
     <!-- Scroll Button -->
     <button class="scroll-button" id="scrollButton" aria-label="Scroll">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z"/> <!-- Downward Arrow -->
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" /> <!-- Downward Arrow -->
         </svg>
     </button>
 
     <script>
         const scrollButton = document.getElementById('scrollButton');
         const scrollIcon = document.getElementById('scrollIcon');
-    
+
         function updateButtonIcon() {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
                 scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
@@ -141,7 +143,7 @@
                 scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
             }
         }
-    
+
         scrollButton.addEventListener('click', () => {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -149,7 +151,7 @@
                 window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             }
         });
-    
+
         window.addEventListener('scroll', updateButtonIcon);
         updateButtonIcon(); // Initial icon state
     </script>

@@ -230,8 +230,8 @@ nav ul li a.active {
 }
 
 .hero-logo img {
-    width: 250px; /* Adjust to fit your preference */
-    height: auto;
+    width: 250px !important;
+    height: auto !important;
     display: block;
     margin: 0 auto 20px auto;
 }
