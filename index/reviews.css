@@ -1,475 +1,450 @@
 /* General Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: url('/assets/images/corkboard.png') center/200% no-repeat;
-    background-size: cover;
-    color: #333333;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('/assets/images/corkboard.png') center/cover no-repeat fixed;
+  color: #333333;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* Top Navigation Bar */
-.nav-logo {
-    width: 40px;
-    /* Adjust as per your needs */
-    height: auto;
-    margin-right: 20px;
-}
-
+/* Navigation */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 18px 20px;
-    border-bottom: 2px solid #2a3b5f;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 18px 20px;
+  border-bottom: 2px solid #2a3b5f;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.desktop-nav {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.nav-scroll-wrapper {
+  width: 100%;
+  overflow: visible;
 }
 
 header nav {
-    display: flex;
-    justify-content: center;
-    /* Centers the menu options */
-    align-items: center;
-    width: 100%;
-    overflow: visible;
-    white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* Allows items to wrap if needed */
-    width: 100%;
-    overflow: visible;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 nav ul li {
-    position: relative;
-    flex-shrink: 0;
-    overflow: visible;
+  position: relative;
+  flex-shrink: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #2a3b5f;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 8px 14px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    white-space: nowrap;
+  text-decoration: none;
+  color: #2a3b5f;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 14px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ffffff;
-    background-color: #2a3b5f;
-    border-radius: 5px;
+  color: #ffffff;
+  background-color: #2a3b5f;
+  border-radius: 5px;
 }
 
-/* Default for desktop */
+/* Desktop Dropdown */
 .dropdown .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    border: 1px solid #2a3b5f;
-    border-radius: 5px;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #2a3b5f;
+  border-radius: 5px;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10001;
 }
 
-/* Mobile override */
-@media (max-width: 768px) {
-  .mobile-nav .dropdown .dropdown-content {
-      position: fixed;
-      top: 60px;
-      left: 5%;
-      right: 5%;
-      display: none;
-      background-color: #fff;
-      border: 1px solid #2a3b5f;
-      border-radius: 5px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
-  }
-
-  .mobile-nav .dropdown:hover .dropdown-content {
-      display: block;
-  }
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.desktop-nav .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #2a3b5f;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #2a3b5f;
+  font-size: 15px;
 }
 
 .dropdown-content a:hover {
-    background-color: #2a3b5f;
-    color: #ffffff;
+  background-color: #2a3b5f;
+  color: #ffffff;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-    text-align: center;
-    padding: 50px 20px;
-    background: #2a3b5f;
-    color: #ffffff;
-    margin-top: 60px;
-    /* Ensure hero section starts below the fixed menu */
+  text-align: center;
+  padding: 115px 20px 45px;
+  background: #2a3b5f;
+  color: #ffffff;
 }
 
-/* Reviews Section */
+.hero h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.hero p {
+  margin: 10px auto 0;
+  max-width: 700px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Reviews Board */
 .board {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Ensure 2 items per row */
-    gap: 10px;
-    /* Adjust space between reviews */
-    justify-items: center;
-    align-items: start;
-    /* Start aligning reviews from the top */
-    padding: 40px 0;
-    /* Adjust top and bottom padding */
-    min-height: 100vh;
-    margin-top: 20px;
-    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transition: filter 0.3s ease;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  justify-items: center;
+  align-items: start;
+  padding: 50px 20px;
+  min-height: 100vh;
+  box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: filter 0.3s ease;
+  width: 100%;
+  flex: 1;
 }
 
 /* Pinned Reviews */
 .pinned-review {
-    width: 100%;
-    /* Full width within its grid cell */
-    max-width: 280px;
-    /* Ensures the reviews are not too wide */
-    margin: 5px;
-    /* Reduced margin between reviews */
-    padding: 20px;
-    background-color: #ffe599;
-    border: 2px solid #f1c232;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transform: rotate(-2deg);
-    font-size: 16px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  margin: 5px;
+  padding: 22px;
+  background-color: #ffe599;
+  border: 2px solid #f1c232;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+  transform: rotate(-2deg);
+  font-size: 16px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.pinned-review:nth-child(even) {
+  transform: rotate(2deg);
 }
 
 .pinned-review:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px) rotate(0deg);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.pinned-review p {
+  line-height: 1.5;
+}
+
+.pinned-review span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #2a3b5f;
 }
 
 .read-more {
-    display: inline-block;
-    background-color: #2a3b5f;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #2a3b5f;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.25s ease;
 }
 
 .read-more:hover {
-    background-color: #1f2a4d;
+  background-color: #1f2a4d;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #2a3b5f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-}
-
-/* Scroll Button Styles */
-.scroll-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #2a3b5f;
-    color: #ffffff;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.scroll-button:hover {
-    background-color: #1f2a4d;
-    transform: translateY(-2px);
-}
-
-.scroll-button svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Modal Styles */
+/* Modal */
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    background-color: #ffe599;
-    border: 2px solid #f1c232;
-    border-radius: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    width: 80%;
-    max-width: 600px;
-    padding: 20px;
-    text-align: center;
-    z-index: 3000;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-}
-
-.modal img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 0 auto;
-    display: block;
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 20px;
+  z-index: 30000;
 }
 
 .modal.active {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
+  display: flex;
 }
 
-/* Modal Content Centering */
 .modal-content {
-    padding: 20px;
-    text-align: center;
-    /* This centers the text inside the modal */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Center content vertically */
-    align-items: center;
-    /* Center content horizontally */
-    width: 100%;
-    /* Ensure the content takes up the full width */
-    box-sizing: border-box;
-    /* Include padding in width calculation */
+  position: relative;
+  background-color: #ffe599;
+  border: 2px solid #f1c232;
+  border-radius: 12px;
+  box-shadow: 0px 10px 26px rgba(0, 0, 0, 0.35);
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 28px;
+  text-align: center;
 }
 
 .modal .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #d9534f;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Pinned Review in the modal */
 .modal .pinned-review {
-    display: inline-block;
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    background-color: #ffe599;
-    border: none;
-    text-align: center;
-    font-size: 16px;
-    box-shadow: none;
-    transform: none;
+  max-width: none;
+  margin: 0;
+  padding: 12px;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
 }
 
-/* Blur Background for Pinned Reviews */
 .pinned-review.blur-background {
-    filter: blur(5px);
-    transition: filter 0.3s ease;
+  filter: blur(4px);
 }
 
-/* Mobile Styles */
+/* Footer */
+footer {
+  background-color: #2a3b5f;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  width: 100%;
+}
+
+/* Scroll Button */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #2a3b5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-button:hover {
+  background-color: #1f2a4d;
+  transform: translateY(-2px);
+}
+
+.scroll-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-    /* Mobile and Tablet Styles */
+  .desktop-nav {
+    display: none;
+  }
 
-    .desktop-nav {
-        display: none;
-    }
+  .mobile-nav {
+    display: block;
+    padding: 12px 0;
+  }
 
-    .mobile-nav {
-        display: block;
-    }
+  .mobile-nav .nav-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    .contact-section {
-        display: none;
-    }
+  .mobile-nav .nav-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
 
-    /* Nav Wrapper */
-    .nav-scroll-wrapper {
-        display: block;
-        overflow-x: auto;
-        overflow-y: visible;
-        position: relative;
-        z-index: 1000;
-        background-color: #fff;
-        isolation: isolate;
-    }
+  .mobile-nav nav {
+    width: max-content;
+    min-width: 100%;
+  }
 
-    .nav-scroll-wrapper::-webkit-scrollbar {
-        display: none;
-    }
+  .mobile-nav nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 12px;
+    margin: 0;
+    width: max-content;
+  }
 
-    header nav {
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-        width: max-content;
-        overflow: visible;
-    }
+  .mobile-nav nav ul li a {
+    font-size: 14px;
+    padding: 9px 12px;
+    border-radius: 6px;
+  }
 
-    nav ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 20px;
-        padding: 0 16px;
-        margin: 0;
-        list-style: none;
-        overflow: visible;
-        position: relative;
-        z-index: 1001;
-        white-space: nowrap;
-    }
+  .mobile-nav .dropbtn::after {
+    content: " ▾";
+    font-size: 12px;
+  }
 
-    nav ul li {
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        position: relative;
-        overflow: visible;
-    }
+  .mobile-nav li:first-child .dropbtn::after {
+    content: "";
+  }
 
-    nav ul li a {
-        font-size: 14px;
-        padding: 8px 12px;
-        white-space: nowrap;
-        text-decoration: none;
-        font-weight: bold;
-        color: #2a3b5f;
-        display: inline-block;
-    }
+  .mobile-nav .dropdown .dropdown-content {
+    position: fixed;
+    top: 54px;
+    left: 12px;
+    right: 12px;
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #2a3b5f;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    z-index: 20000;
+    padding: 8px;
+  }
 
-    nav ul li.dropdown {
-        position: relative;
-    }
+  .mobile-nav .dropdown.active .dropdown-content {
+    display: block;
+  }
 
-    /* Mobile Dropdowns */
-    .mobile-nav .dropdown .dropdown-content {
-        position: fixed;
-        top: 60px;
-        /* adjust to match header height */
-        left: 5%;
-        right: 5%;
-        display: none;
-        background-color: #fff;
-        border: 1px solid #2a3b5f;
-        border-radius: 5px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        z-index: 9999;
-    }
+  .mobile-nav .dropdown .dropdown-content a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    padding: 13px 14px;
+    border-radius: 7px;
+    color: #2a3b5f;
+    background: white;
+  }
 
-    .mobile-nav .dropdown:hover .dropdown-content {
-        display: block;
-    }
+  .mobile-nav .dropdown .dropdown-content a:hover,
+  .mobile-nav .dropdown .dropdown-content a:active {
+    background-color: #2a3b5f;
+    color: white;
+  }
 
-    .hero {
-        margin-top: 100px;
-        /* prevent header overlap */
-    }
+  .hero {
+    padding: 95px 16px 38px;
+  }
 
-    .board {
-        padding-top: 100px; /* space below fixed nav */
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 40px;
-        grid-template-columns: 1fr; /* stack vertically on mobile */
-        gap: 10px;
-        box-sizing: border-box;
-      }      
+  .hero h1 {
+    font-size: 30px;
+  }
 
-    .pinned-review {
-        width: 100%;
-        /* Full width on mobile for reviews */
-        margin: 10px 0;
-        /* Vertical margin for spacing */
-        max-width: none;
-        /* Remove max-width for full screen */
-    }
+  .hero p {
+    font-size: 16px;
+  }
 
-    .modal {
-        width: 90%;
-        /* Modal width adjusted for smaller screens */
-    }
+  .board {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 34px 16px 42px;
+    min-height: auto;
+  }
 
-    .read-more {
-        font-size: 14px;
-        /* Smaller font size for buttons */
-        padding: 5px 10px;
-        /* Reduced padding */
-    }
+  .pinned-review,
+  .pinned-review:nth-child(even) {
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+  }
 
-    .scroll-button {
-        width: 45px;
-        /* Adjust scroll button size */
-        height: 45px;
-    }
+  .pinned-review:hover {
+    transform: translateY(-4px);
+  }
 
-    /* Additional mobile styling for text and layout adjustments */
-    .modal-content {
-        padding: 15px;
-        text-align: center;
-        /* Ensure the text remains centered */
-    }
+  .modal {
+    padding: 16px;
+  }
+
+  .modal-content {
+    max-height: 82vh;
+    padding: 22px 16px;
+  }
+
+  .read-more {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .scroll-button {
+    width: 45px;
+    height: 45px;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .scroll-button svg {
+    width: 20px;
+    height: 20px;
+  }
 }

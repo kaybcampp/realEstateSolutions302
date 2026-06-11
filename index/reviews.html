@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews - Real Estate Solutions 302</title>
     <link rel="stylesheet" href="reviews.css?v=3">
-    <link rel="icon" href="/assets/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
 </head>
 
 <body>
+
     <!-- ✅ DESKTOP NAV -->
     <header class="desktop-nav">
         <div class="nav-scroll-wrapper">
@@ -39,7 +40,7 @@
         </div>
     </header>
 
-    <!-- ✅ MOBILE-ONLY NAV -->
+    <!-- ✅ MOBILE NAV -->
     <header class="mobile-nav">
         <div class="nav-scroll-wrapper">
             <nav>
@@ -71,7 +72,7 @@
 
     <!-- Reviews Section -->
     <main class="board">
-        <!-- Review 1 -->
+
         <div class="pinned-review">
             <p>"I first started working with Lakesia in June of 2020, I was extremely hesitant considering we were
                 right smack in the middle of COVID-19 pandemic..."</p>
@@ -79,36 +80,30 @@
             <span>- Serena</span>
         </div>
 
-        <!-- Review 2 -->
         <div class="pinned-review">
-            <p>"Kesia was a great help to me selling my home when I was several miles away from the home location..."
-            </p>
+            <p>"Kesia was a great help to me selling my home when I was several miles away from the home location..."</p>
             <a class="read-more" href="#" data-review="2">Read More</a>
             <span>- tianamoreo 612</span>
         </div>
 
-        <!-- Review 2 -->
         <div class="pinned-review">
             <p>"Kesia Campbell truly helped our dreams come true with buying a home...."</p>
             <a class="read-more" href="#" data-review="3">Read More</a>
             <span>- Michele Mills</span>
         </div>
 
-        <!-- Review 2 -->
         <div class="pinned-review">
             <p>"Kesia was a great RE agent and was helpful through every step of the process..."</p>
             <a class="read-more" href="#" data-review="4">Read More</a>
             <span>- DinaTzezairlidis</span>
         </div>
 
-        <!-- Review 2 -->
         <div class="pinned-review">
             <p>"My experiences with Kesia Campbell have been absolutely wonderful..."</p>
             <a class="read-more" href="#" data-review="5">Read More</a>
             <span>- kayb12345</span>
         </div>
 
-        <!-- Add more reviews here... -->
     </main>
 
     <!-- Modal for Enlarged View of Review -->
@@ -119,7 +114,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Move With Kesia DE. All Rights Reserved.</p>
     </footer>
@@ -127,29 +121,23 @@
     <!-- Scroll Button -->
     <button class="scroll-button" id="scrollButton" aria-label="Scroll">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" /> <!-- Downward Arrow -->
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" />
         </svg>
     </button>
 
     <script>
-        // JavaScript for handling "Read More" and modal popup
         document.addEventListener("DOMContentLoaded", function () {
             const reviews = {
                 1: {
-                    text: `"I first started working with Lakesia in June of 2020, I was extremely hesitant considering we were
-right smack in the middle of COVID-19 pandemic. However, after discussing with her my concerns
-but also my desires it was a lot easier for me to move forward with my plan of selling my current
-home and beginning what turned into an emotional quest to find my forever dream home. To my
-surprise the day after putting my house on the market I had received 3 offers and just like that, my
-house was sold by mid July."`,
+                    text: `"I first started working with Lakesia in June of 2020, I was extremely hesitant considering we were right smack in the middle of COVID-19 pandemic. However, after discussing with her my concerns but also my desires it was a lot easier for me to move forward with my plan of selling my current home and beginning what turned into an emotional quest to find my forever dream home. To my surprise the day after putting my house on the market I had received 3 offers and just like that, my house was sold by mid July."`,
                     author: "Serena"
                 },
                 2: {
-                    text: `"Kesia was a great help to me selling my home when I was several miles away from the home location. She kept in touch every few days and immediately when an offer was submitted. She made contacts with the mortgage company and helped with the necessary paperwork I feel he went above and beyond to help me with the sale."`,
+                    text: `"Kesia was a great help to me selling my home when I was several miles away from the home location. She kept in touch every few days and immediately when an offer was submitted. She made contacts with the mortgage company and helped with the necessary paperwork. I feel she went above and beyond to help me with the sale."`,
                     author: "tianamoreo 612"
                 },
                 3: {
-                    text: `"Kesia Campbell truly helped our dreams come true with buying a home. She was completely honestly with us and took her time with us during this process."`,
+                    text: `"Kesia Campbell truly helped our dreams come true with buying a home. She was completely honest with us and took her time with us during this process."`,
                     author: "Michele Mills"
                 },
                 4: {
@@ -157,55 +145,57 @@ house was sold by mid July."`,
                     author: "DinaTzezairlidis"
                 },
                 5: {
-                    text: `"My experiences with Kesia Campbell have been absolutely wonderful. Mrs. Campbell is a very professional, very well put together individual. Mrs. Campbell has recently been showing my family and I some very beautiful homes! Right from the start Mrs. Campbell greeted my family and I with bright smiles and firm handshakes. When questions were asked about the homes she knew the answer almost immediately. I was impressed with her high knowledge of the homes, She knows exactly what she's talking about. I have no bad experiences with her and this is my go-to Realtor. We are going to buy very soon and Kesia Campbell is the person we will seal the deal with. I recommend her if you would like a professional, kind, intelligent individual for the buying or selling of your home!"`,
+                    text: `"My experiences with Kesia Campbell have been absolutely wonderful. Mrs. Campbell is a very professional, very well put together individual. Mrs. Campbell has recently been showing my family and I some very beautiful homes! Right from the start Mrs. Campbell greeted my family and I with bright smiles and firm handshakes. When questions were asked about the homes she knew the answer almost immediately. I was impressed with her high knowledge of the homes. She knows exactly what she's talking about. I have no bad experiences with her and this is my go-to Realtor. We are going to buy very soon and Kesia Campbell is the person we will seal the deal with. I recommend her if you would like a professional, kind, intelligent individual for the buying or selling of your home!"`,
                     author: "kayb12345"
-                },
+                }
             };
 
             const modal = document.getElementById("reviewModal");
             const modalContent = document.getElementById("modalReviewContent");
             const closeModal = document.getElementById("closeModal");
 
-            // Attach event listeners to all "Read More" buttons
             document.querySelectorAll(".read-more").forEach(button => {
                 button.addEventListener("click", function (e) {
                     e.preventDefault();
 
                     const reviewId = this.getAttribute("data-review");
-                    modalContent.innerHTML = `<div class="pinned-review enlarged"><p>${reviews[reviewId].text}</p><span>- ${reviews[reviewId].author}</span></div>`;
+                    const review = reviews[reviewId];
 
-                    // Add blur effect to background content (only sticky notes)
+                    if (!review) return;
+
+                    modalContent.innerHTML = `
+                        <div class="pinned-review enlarged">
+                            <p>${review.text}</p>
+                            <span>- ${review.author}</span>
+                        </div>
+                    `;
+
                     document.querySelectorAll('.pinned-review').forEach(note => {
                         if (!note.classList.contains('enlarged')) {
                             note.classList.add('blur-background');
                         }
                     });
 
-                    // Show the modal and activate its visibility
                     modal.style.display = "flex";
                     modal.classList.add('active');
                 });
             });
 
-            // Close the modal
-            closeModal.addEventListener("click", function () {
+            function closeReviewModal() {
                 modal.style.display = "none";
                 modal.classList.remove('active');
+
                 document.querySelectorAll('.pinned-review').forEach(note => {
                     note.classList.remove('blur-background');
                     note.classList.remove('enlarged');
                 });
-            });
+            }
 
-            // Close the modal if clicked outside the content area
+            closeModal.addEventListener("click", closeReviewModal);
+
             window.addEventListener("click", function (e) {
                 if (e.target === modal) {
-                    modal.style.display = "none";
-                    modal.classList.remove('active');
-                    document.querySelectorAll('.pinned-review').forEach(note => {
-                        note.classList.remove('blur-background');
-                        note.classList.remove('enlarged');
-                    });
+                    closeReviewModal();
                 }
             });
         });
@@ -217,10 +207,10 @@ house was sold by mid July."`,
 
         function updateButtonIcon() {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z');
                 scrollButton.setAttribute('aria-label', 'Scroll to Top');
             } else {
-                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z');
                 scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
             }
         }
@@ -234,8 +224,36 @@ house was sold by mid July."`,
         });
 
         window.addEventListener('scroll', updateButtonIcon);
-        updateButtonIcon(); // Initial icon state
+        updateButtonIcon();
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileDropdownButtons = document.querySelectorAll(
+                ".mobile-nav .dropdown > .dropbtn"
+            );
+
+            mobileDropdownButtons.forEach(button => {
+                button.addEventListener("click", function (e) {
+                    const dropdown = this.parentElement;
+                    const submenu = dropdown.querySelector(".dropdown-content");
+
+                    if (!submenu) return;
+
+                    e.preventDefault();
+
+                    document.querySelectorAll(".mobile-nav .dropdown").forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove("active");
+                        }
+                    });
+
+                    dropdown.classList.toggle("active");
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

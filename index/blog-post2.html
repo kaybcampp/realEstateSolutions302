@@ -200,6 +200,40 @@
         // Initial update for icon
         updateButtonIcon();
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const mobileDropdownButtons = document.querySelectorAll(
+                ".mobile-nav .dropdown > .dropbtn"
+            );
+
+            mobileDropdownButtons.forEach(button => {
+
+                button.addEventListener("click", function (e) {
+
+                    const dropdown = this.parentElement;
+                    const submenu = dropdown.querySelector(".dropdown-content");
+
+                    if (!submenu) return;
+
+                    e.preventDefault();
+
+                    document.querySelectorAll(".mobile-nav .dropdown").forEach(item => {
+
+                        if (item !== dropdown) {
+                            item.classList.remove("active");
+                        }
+
+                    });
+
+                    dropdown.classList.toggle("active");
+
+                });
+
+            });
+
+        });
+    </script>
 
     <script src="blog.js"></script>
 </body>

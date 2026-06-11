@@ -5,37 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sold Homes - Real Estate Solutions 302</title>
+
     <link rel="stylesheet" href="contact.css?v=3">
-    <link rel="icon" href="/assets/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
+
     <style>
-        /* General Styles */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             background-color: #f7f7f7;
             color: #333333;
             overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            height: 100vh;
-            /* Set the body to full viewport height */
         }
 
-        /* Top Navigation Bar */
         header {
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: #ffffff;
-            padding: 10px 20px;
+            padding: 18px 20px;
             border-bottom: 2px solid #2a3b5f;
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1000;
+            z-index: 10000;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .desktop-nav {
+            display: block;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .nav-scroll-wrapper {
+            width: 100%;
+            overflow: visible;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
         }
 
         nav ul {
@@ -45,10 +67,14 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
         }
 
         nav ul li {
             position: relative;
+            flex-shrink: 0;
         }
 
         nav ul li a {
@@ -56,8 +82,10 @@
             color: #2a3b5f;
             font-weight: bold;
             font-size: 18px;
-            padding: 5px 10px;
+            padding: 8px 14px;
             transition: color 0.3s ease, background-color 0.3s ease;
+            white-space: nowrap;
+            display: inline-block;
         }
 
         nav ul li a:hover,
@@ -67,146 +95,263 @@
             border-radius: 5px;
         }
 
-        /* Hero Section (Updated with Blue Background and "Sold Homes" Text) */
+        .dropdown .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #2a3b5f;
+            border-radius: 5px;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+            z-index: 10001;
+        }
+
+        .desktop-nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 14px;
+            color: #2a3b5f;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2a3b5f;
+            color: #ffffff;
+        }
+
         .hero {
             background-color: #2a3b5f;
-            /* Blue background */
             color: white;
-            height: 100px;
-            /* Reduced height to match "Contact Us" header height */
+            min-height: 190px;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px 20px;
+            padding: 110px 20px 45px;
             flex-direction: column;
         }
 
         .hero h1 {
-            font-size: 28px;
-            /* Adjusted font size */
+            font-size: 34px;
             margin: 0;
         }
 
         .hero p {
             font-size: 18px;
-            /* Adjust the size of the paragraph */
             margin-top: 10px;
-            /* Space between the title and the paragraph */
+            max-width: 650px;
+            line-height: 1.5;
         }
 
-
-        /* Sold Listings Section */
         .sold-listings {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            /* Adjust the gap between the cards */
-            padding: 20px;
-            margin-top: 20px;
+            gap: 24px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
             flex-grow: 1;
-            /* Ensures this section takes up the available space */
         }
 
-        /* Listing Card Styles */
         .listing-card {
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
-            /* Stack contents vertically */
-            height: auto;
-            /* Let the card's height adjust to its content */
         }
 
-        /* Control Image Size */
+        .listing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.14);
+        }
+
         .listing-card img {
             width: 100%;
-            height: auto;
-            /* Make sure the images scale proportionally */
-            max-height: 200px;
-            /* Set a maximum height for the images to prevent distortion */
+            height: 210px;
             object-fit: cover;
-            /* Ensures the image fits inside the container without distorting */
-            border-radius: 8px;
+            border-radius: 10px;
             margin-bottom: 15px;
-            /* Space between image and text */
-        }
-
-        /* Hover Effects */
-        .listing-card:hover {
-            transform: translateY(-10px);
+            background-color: #e9edf3;
         }
 
         .listing-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: #2a3b5f;
-            margin: 15px 0;
+            margin: 12px 0;
         }
 
         .listing-card p {
             font-size: 1rem;
             color: #333;
-            margin: 10px 0;
+            margin: 8px 0;
         }
 
         .listing-card .price {
             font-size: 1.25rem;
             font-weight: bold;
             color: #2a3b5f;
-            margin: 10px 0;
         }
 
         .listing-card .details {
             font-size: 1rem;
-            color: #777;
-            margin-bottom: 10px;
+            color: #666;
+            margin-bottom: 15px;
         }
 
         .listing-card .btn-red {
             display: inline-block;
-            background-color: red;
+            background-color: #b40000;
             color: #fff;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 999px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            margin-top: auto;
         }
 
-        .listing-card .btn-red:hover {
-            background-color: red;
-        }
-
-
-        /* Footer Styles */
         footer {
             background-color: #2a3b5f;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: relative;
+            padding: 12px 0;
             width: 100%;
             margin-top: auto;
-            /* Ensures the footer is at the bottom */
         }
 
         @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+                padding: 12px 0;
+            }
+
+            .mobile-nav .nav-scroll-wrapper {
+                overflow-x: auto;
+                overflow-y: visible;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .mobile-nav .nav-scroll-wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .mobile-nav nav {
+                width: max-content;
+                min-width: 100%;
+            }
+
+            .mobile-nav nav ul {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                gap: 8px;
+                padding: 0 12px;
+                margin: 0;
+                width: max-content;
+            }
+
+            .mobile-nav nav ul li a {
+                font-size: 14px;
+                padding: 9px 12px;
+                border-radius: 6px;
+            }
+
+            .mobile-nav .dropbtn::after {
+                content: " ▾";
+                font-size: 12px;
+            }
+
+            .mobile-nav li:first-child .dropbtn::after {
+                content: "";
+            }
+
+            .mobile-nav .dropdown .dropdown-content {
+                position: fixed;
+                top: 54px;
+                left: 12px;
+                right: 12px;
+                display: none;
+                background-color: #ffffff;
+                border: 1px solid #2a3b5f;
+                border-radius: 10px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+                z-index: 20000;
+                padding: 8px;
+            }
+
+            .mobile-nav .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .mobile-nav .dropdown .dropdown-content a {
+                display: block;
+                width: 100%;
+                font-size: 15px;
+                padding: 13px 14px;
+                border-radius: 7px;
+                color: #2a3b5f;
+                background: white;
+            }
+
+            .mobile-nav .dropdown .dropdown-content a:hover,
+            .mobile-nav .dropdown .dropdown-content a:active {
+                background-color: #2a3b5f;
+                color: white;
+            }
+
             .hero {
-                padding-top: 120px;
-                /* Adjust this value if needed */
+                min-height: 210px;
+                padding: 95px 16px 40px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .sold-listings {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 32px 16px;
+            }
+
+            .listing-card {
+                padding: 18px;
+            }
+
+            .listing-card img {
+                height: 220px;
+            }
+
+            .listing-card h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 
 <body>
+
     <!-- ✅ DESKTOP NAV -->
     <header class="desktop-nav">
         <div class="nav-scroll-wrapper">
@@ -236,7 +381,7 @@
         </div>
     </header>
 
-    <!-- ✅ MOBILE-ONLY NAV -->
+    <!-- ✅ MOBILE NAV -->
     <header class="mobile-nav">
         <div class="nav-scroll-wrapper">
             <nav>
@@ -277,13 +422,11 @@
         <!-- Listings will be dynamically populated here -->
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Move With Kesia DE. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // Fetching the sold listings data from the backend
         fetch('https://movewithkesiade.com/api/sold-listings', {
             method: 'GET',
             headers: {
@@ -293,21 +436,52 @@
             .then(response => response.json())
             .then(data => {
                 const listingsContainer = document.getElementById('sold-listings');
+
                 data.forEach(listing => {
                     const card = document.createElement('div');
                     card.classList.add('listing-card');
+
                     card.innerHTML = `
-                <img src="https://movewithkesiade.com/${listing.image}" alt="${listing.address}" />
-                <h3>${listing.address}</h3>
-                <p class="price">$${listing.price}</p>
-                <p class="details">${listing.details}</p>
-                <a class="btn-red">SOLD</a>
-            `;
+                        <img src="https://movewithkesiade.com/${listing.image}" alt="${listing.address}" />
+                        <h3>${listing.address}</h3>
+                        <p class="price">$${listing.price}</p>
+                        <p class="details">${listing.details}</p>
+                        <span class="btn-red">SOLD</span>
+                    `;
+
                     listingsContainer.appendChild(card);
                 });
             })
             .catch(error => console.error('Error fetching listings:', error));
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileDropdownButtons = document.querySelectorAll(
+                ".mobile-nav .dropdown > .dropbtn"
+            );
+
+            mobileDropdownButtons.forEach(button => {
+                button.addEventListener("click", function (e) {
+                    const dropdown = this.parentElement;
+                    const submenu = dropdown.querySelector(".dropdown-content");
+
+                    if (!submenu) return;
+
+                    e.preventDefault();
+
+                    document.querySelectorAll(".mobile-nav .dropdown").forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove("active");
+                        }
+                    });
+
+                    dropdown.classList.toggle("active");
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>

@@ -1,861 +1,597 @@
 /* General Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f7f7f7;
-    color: #333333;
-    /* Removed overflow-x: hidden to allow horizontal nav scroll */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333333;
 }
 
 main,
 section,
 footer {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-/* Top Navigation Bar */
-/* Add a class to the logo image to position it properly in the navbar */
-.nav-logo {
-    width: 40px;
-    /* You can adjust this as per your needs */
-    height: auto;
-    margin-right: 20px;
-    /* Adds spacing to the right of the logo */
-}
+/* ================================
+   NAVIGATION
+================================ */
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 18px 20px;
-    border-bottom: 2px solid #2a3b5f;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 18px 20px;
+  border-bottom: 2px solid #2a3b5f;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.desktop-nav {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.nav-scroll-wrapper {
+  width: 100%;
+  overflow: visible;
 }
 
 header nav {
-    display: flex;
-    justify-content: center;
-    /* Centers the menu options */
-    align-items: center;
-    width: 100%;
-    overflow: visible;
-    white-space: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: visible;
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* Allows items to wrap if needed */
-    width: 100%;
-    overflow: visible;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 nav ul li {
-    position: relative;
-    flex-shrink: 0;
-    overflow: visible;
+  position: relative;
+  flex-shrink: 0;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #2a3b5f;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 8px 14px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-    white-space: nowrap;
+  text-decoration: none;
+  color: #2a3b5f;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 14px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #ffffff;
-    background-color: #2a3b5f;
-    border-radius: 5px;
+  color: #ffffff;
+  background-color: #2a3b5f;
+  border-radius: 5px;
 }
 
-/* Default for desktop */
+/* Desktop Dropdown */
 .dropdown .dropdown-content {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: #fff;
-    border: 1px solid #2a3b5f;
-    border-radius: 5px;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #2a3b5f;
+  border-radius: 5px;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.12);
+  z-index: 10001;
 }
 
-/* Mobile override */
-@media (max-width: 768px) {
-  .mobile-nav .dropdown .dropdown-content {
-      position: fixed;
-      top: 60px;
-      left: 5%;
-      right: 5%;
-      display: none;
-      background-color: #fff;
-      border: 1px solid #2a3b5f;
-      border-radius: 5px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
-  }
-
-  .mobile-nav .dropdown:hover .dropdown-content {
-      display: block;
-  }
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+.desktop-nav .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #2a3b5f;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  padding: 12px 14px;
+  text-decoration: none;
+  color: #2a3b5f;
+  font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dropdown-content a:hover {
-    background-color: #2a3b5f;
-    color: #ffffff;
+  background-color: #2a3b5f;
+  color: #ffffff;
 }
 
-/* Hero Section */
-.hero {
-    position: relative;
-    background-color: #ffffff;
-    /* White background for the hero section */
-    color: #333333;
-    margin-top: 0;
-    /* Removes gap between menu and image */
-    height: 600px;
-    /* Adjusted height for a less overwhelming image */
-    display: flex;
-    flex-direction: column;
-    /* Ensures the bar is positioned at the bottom */
-    justify-content: center;
-    /* Centers the content vertically */
-    align-items: center;
-    /* Centers the content horizontally */
-    overflow: visible;
-    /* Ensures the bar doesn't extend beyond the image */
-    text-align: center;
-    padding-top: 60px;
-    /* 👈 reserve space for nav */
-    background-image: url('/assets/images/logo.png');
-    /* Update path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* ================================
+   HERO
+================================ */
 
 .hero {
-    position: relative;
-    background-color: #ffffff;
-    color: #333333;
-    margin-top: 0;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    text-align: center;
-    padding-top: 60px;
-    background-image: url('/assets/images/logo.png');
-    background-size: 400px auto; /* 👈 Smaller background image */
-    background-position: center center; /* 👈 Center it */
-    background-repeat: no-repeat;
+  position: relative;
+  background-color: #ffffff;
+  color: #333333;
+  margin-top: 0;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 60px;
 }
 
-.hero-logo {
-    position: relative;
-    z-index: 2; /* 👈 Ensure it's above background */
-    margin-top: 10px;
-}
-
-.hero-logo img {
-    width: 250px; /* 👈 Adjusted size for the logo */
-    height: auto;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-.hero {
-    position: relative;
-    background-color: #ffffff;
-    color: #333333;
-    margin-top: 0;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: visible;
-    text-align: center;
-    padding-top: 60px;
-    background-image: url('/assets/images/logo.png'); /* Background image stays */
-    background-size: 400px auto; /* Smaller background */
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* This is the real logo image on top */
-.hero-logo {
-    position: relative;
-    z-index: 2; /* Ensures it is above the background */
-    margin-top: 10px;
-}
-
-.hero-logo img {
-    width: 250px !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto 20px auto;
-}
-
-/* If you have a second hero img directly inside .hero, hide it */
-.hero > img {
-    display: none; /* Hides the duplicate image */
-}
-
-/* Hero Bar */
-.hero-bar {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 8px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.hero {
-    position: relative;
-    background-color: #ffffff;
-    margin-top: 0;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Push logo toward bottom */
-    align-items: center;
-    overflow: hidden;
-    text-align: center;
-    padding-top: 60px;
-}
-
-/* Background image as a separate layer */
 .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/images/logo.png'); /* <-- background image */
-    background-size: 400px auto; /* <-- smaller background image */
-    background-position: center center;
-    background-repeat: no-repeat;
-    opacity: 0.15; /* lighter background */
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/images/logo.png');
+  background-size: 400px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  z-index: 1;
 }
 
-/* Real Logo */
 .hero-logo {
-    position: relative;
-    z-index: 2; /* Real logo above background */
-    margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 30px;
 }
 
 .hero-logo img {
-    width: 80px; /* ⬅️ about 1/3 of 250px */
-    height: auto;
-    display: block;
-    margin: 0 auto;
+  width: 80px !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Hero Bar Text Styles (if you have a hero-bar) */
-.hero-bar h1 {
-    font-size: 28px;
-    color: #2a3b5f;
-    margin-bottom: 5px;
+.hero > img {
+  display: none;
 }
 
-.hero-bar p {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 10px;
-}
+/* ================================
+   CONTACT BOX
+================================ */
 
-.hero-bar .btn-blue {
-    background-color: #2a3b5f;
-    color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    display: inline-block;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero-bar .btn-blue:hover {
-    background-color: #1f2a4d;
-    transform: translateY(-2px);
-}
-
-/* About Section */
-.section {
-    padding: 50px 20px;
-    background-color: #f7f7f7;
-    text-align: center;
-}
-
-.business-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 30px;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.business-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.card-image img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #2a3b5f;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.social-media a img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.3s ease;
-}
-
-.social-media a img:hover {
-    transform: scale(1.1);
-}
-
-.card-info {
-    margin-left: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-
-.signature {
-    width: 175px;
-    margin-top: 20px;
-    align-self: flex-end;
-}
-
-.contact-button {
-    margin-top: auto;
-    /* Push the button to the bottom */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.btn-blue {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #2a3b5f;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn-blue:hover {
-    background-color: #1f2a4d;
-}
-
-/* Footer */
-footer {
-    background-color: #ffffff;
-    color: #333333;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Scroll Button Styles */
-.scroll-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    background-color: #2a3b5f;
-    color: #ffffff;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
-}
-
-.scroll-button:hover {
-    background-color: #1f2a4d;
-    transform: translateY(-2px);
-}
-
-.scroll-button svg {
-    width: 24px;
-    height: 24px;
-}
-
-/* Contact Section */
 .contact-section {
-    position: absolute;
-    top: 70px;
-    /* Move to the top right of the hero section, just below the menu bar */
-    right: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Slight background for contrast */
-    padding: 20px;
-    /* Adjusted padding */
-    border-radius: 10px;
-    /* Slightly larger radius for rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Deep blue shadow effect */
-    z-index: 1000;
-    font-size: 14px;
-    /* Smaller text for better visuals */
+  position: absolute;
+  top: 85px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  z-index: 900;
+  font-size: 14px;
 }
 
 .contact-section h2 {
-    font-size: 20px;
-    color: #2a3b5f;
-    margin-bottom: 10px;
-    /* Increased margin for better spacing */
+  font-size: 20px;
+  color: #2a3b5f;
+  margin-bottom: 10px;
 }
 
 .contact-section p {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 10px;
-    /* Spacing between paragraph and button */
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.contact-section .btn-blue {
-    font-size: 12px;
-    /* Smaller button size */
-    padding: 6px 12px;
-    /* Adjusted padding */
-    background-color: #2a3b5f;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+/* ================================
+   BUTTONS
+================================ */
+
+.btn-blue {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2a3b5f;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.contact-section .btn-blue:hover {
-    background-color: #1f2a4d;
-    transform: translateY(-2px);
+.btn-blue:hover {
+  background-color: #1f2a4d;
+  transform: translateY(-2px);
 }
 
-/* Footer Styles */
-footer {
-    background-color: #2a3b5f;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
+/* ================================
+   ABOUT SECTION
+================================ */
+
+.section {
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
 }
 
-/* New Section Styles */
+.section h2 {
+  color: #2a3b5f;
+}
+
+.business-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2a3b5f;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-media a img {
+  width: 32px;
+  height: 32px;
+}
+
+.card-info {
+  margin-left: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.signature {
+  width: 175px;
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+.contact-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================================
+   INFO SECTION
+================================ */
+
 .info-section {
-    padding: 50px 20px;
-    background-color: #f7f7f7;
-    text-align: center;
+  padding: 50px 20px;
+  background-color: #f7f7f7;
+  text-align: center;
 }
 
 .info-section h2 {
-    font-size: 32px;
-    color: #2a3b5f;
-    margin-bottom: 20px;
-}
-
-.info-section p {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 30px;
+  font-size: 32px;
+  color: #2a3b5f;
+  margin-bottom: 20px;
 }
 
 .info-section .info-box {
-    background-color: #ffffff;
-    padding: 30px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 20px 0;
-    text-align: left;
-    display: inline-block;
-    width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-section .info-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  padding: 30px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  vertical-align: top;
 }
 
 .info-section .info-box h3 {
-    font-size: 24px;
-    color: #2a3b5f;
-    margin-bottom: 15px;
+  font-size: 24px;
+  color: #2a3b5f;
+  margin-bottom: 15px;
 }
 
 .info-section .info-box p {
-    font-size: 16px;
-    color: #666;
+  font-size: 16px;
+  color: #666;
 }
 
-/* New Image Section */
+/* ================================
+   MEET KESIA
+================================ */
+
 .meet-kesia-section {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
-    gap: 30px;
-    /* Increased gap between boxes */
-    flex-wrap: wrap;
-    /* Allow wrapping for better responsiveness */
-    justify-content: center;
-    /* Ensure the content is centered */
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px 50px;
 }
 
 .meet-kesia-section .image-box {
-    background-color: #ffffff;
-    padding: 30px;
-    /* Increased padding for better spacing */
-    border-radius: 15px;
-    /* Larger border radius for a smoother look */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    /* Deeper shadow for a more prominent look */
-    width: 100%;
-    max-width: 350px;
-    /* Increased max width for more space */
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.meet-kesia-section .image-box:hover {
-    transform: translateY(-10px);
-    /* Slight hover effect for the boxes */
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
-    /* Increased shadow effect on hover */
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
 }
 
 .meet-kesia-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    /* Increased margin for better spacing */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .meet-kesia-section .image-box h3 {
-    font-size: 26px;
-    /* Slightly increased font size for emphasis */
-    color: #2a3b5f;
-    margin-bottom: 15px;
-    /* Increased margin for better spacing */
+  font-size: 26px;
+  color: #2a3b5f;
+  margin-bottom: 15px;
 }
 
 .meet-kesia-section .image-box p {
-    font-size: 18px;
-    /* Increased font size for better readability */
-    color: #666;
-    margin-bottom: 20px;
-    /* Increased bottom margin */
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
 }
 
-/* Desktop default: show desktop nav, hide mobile nav */
-.desktop-nav {
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  background-color: #2a3b5f;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+/* ================================
+   SCROLL BUTTON
+================================ */
+
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #2a3b5f;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .mobile-nav .nav-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-nav .nav-scroll-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-nav nav {
+    width: max-content;
+    min-width: 100%;
+    overflow: visible;
+  }
+
+  .mobile-nav nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 0 12px;
+    margin: 0;
+    width: max-content;
+  }
+
+  .mobile-nav nav ul li {
+    position: relative;
+  }
+
+  .mobile-nav nav ul li a {
+    font-size: 14px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+
+  .mobile-nav .dropbtn::after {
+    content: " ▾";
+    font-size: 12px;
+  }
+
+  .mobile-nav li:first-child .dropbtn::after,
+  .mobile-nav li:not(.dropdown) .dropbtn::after {
+    content: "";
+  }
+
+  /* Mobile dropdown click behavior */
+  .mobile-nav .dropdown .dropdown-content {
+    position: fixed;
+    top: 54px;
+    left: 12px;
+    right: 12px;
+    display: none;
+    background-color: #ffffff;
+    border: 1px solid #2a3b5f;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    z-index: 20000;
+    padding: 8px;
+  }
+
+  .mobile-nav .dropdown.active .dropdown-content {
     display: block;
   }
-  
-  .mobile-nav {
-    display: none;
-  }  
 
-/* Mobile and Tablet Styles */
-@media (max-width: 768px) {
-    /* Hide desktop nav, show mobile nav */
-    .desktop-nav {
-      display: none;
-    }
-  
-    .mobile-nav {
-      display: block;
-    }
-  
-    .contact-section {
-      display: none;
-    }
-  
-    /* Nav Wrapper */
-    .nav-scroll-wrapper {
-      display: block;
-      overflow-x: auto;
-      overflow-y: visible;
-      position: relative;
-      z-index: 1000;
-      background-color: #fff;
-      isolation: isolate;
-    }
-  
-    .nav-scroll-wrapper::-webkit-scrollbar {
-      display: none;
-    }
-  
-    header nav {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      width: max-content;
-      overflow: visible;
-    }
-  
-    nav ul {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      gap: 20px;
-      padding: 0 16px;
-      margin: 0;
-      list-style: none;
-      overflow: visible;
-      position: relative;
-      z-index: 1001;
-      white-space: nowrap;
-    }
-  
-    nav ul li {
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      position: relative;
-      overflow: visible;
-    }
-  
-    nav ul li a {
-      font-size: 14px;
-      padding: 8px 12px;
-      white-space: nowrap;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2a3b5f;
-      display: inline-block;
-    }
-  
-    nav ul li.dropdown {
-      position: relative;
-    }
-  
-    /* Mobile Dropdowns */
-    .mobile-nav .dropdown .dropdown-content {
-      position: fixed;
-      top: 60px; /* adjust to match header height */
-      left: 5%;
-      right: 5%;
-      display: none;
-      background-color: #fff;
-      border: 1px solid #2a3b5f;
-      border-radius: 5px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      z-index: 9999;
-    }
-  
-    .mobile-nav .dropdown:hover .dropdown-content {
-      display: block;
-    }
-  
-    /* Hero Section */
-    .hero {
-      height: 450px;
-    }
-  
-    .hero img {
-      max-width: 60%;
-    }
-  
-    .hero-bar {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-    }
-  
-    .hero-logo {
-      margin-top: 10px;
-    }
-  
-    .hero-logo img {
-      width: 100px;
-      height: auto;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
-  
-    /* Business Card */
-    .business-card {
-      flex-direction: column;
-      text-align: center;
-      padding: 20px;
-    }
-  
-    .card-image img {
-      width: 120px;
-      height: 120px;
-    }
-  
-    .social-media {
-      justify-content: center;
-    }
-  
-    .card-info {
-      margin-left: 0;
-      text-align: center;
-    }
-  
-    .signature {
-      width: 150px;
-    }
-  
-    .btn-blue {
-      padding: 12px 24px;
-    }
-  
-    /* Contact Section */
-    .contact-section {
-      position: absolute;
-      top: 70px;
-      right: 10px;
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      font-size: 14px;
-    }
-  
-    .contact-section h2 {
-      font-size: 18px;
-      color: #2a3b5f;
-    }
-  
-    .contact-section p {
-      font-size: 14px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-  
-    /* Meet Kesia Section */
-    .meet-kesia-section {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .meet-kesia-section .image-box {
-      width: 100%;
-      max-width: 350px;
-      padding: 20px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-  
-    .meet-kesia-section .image-box h3 {
-      font-size: 22px;
-    }
-  
-    .meet-kesia-section .image-box p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
-  
-    /* Info Section */
-    .info-section {
-      padding: 30px 10px;
-    }
-  
-    .info-section .info-box {
-      width: 100%;
-      max-width: 100%;
-      margin-bottom: 20px;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-  
-    .info-section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-  
-    .info-section .info-box h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-    }
-  
-    .info-section .info-box p {
-      font-size: 14px;
-    }
-  
-    /* Scroll Button */
-    .scroll-button {
-      bottom: 10px;
-      right: 10px;
-      width: 45px;
-      height: 45px;
-    }
-  
-    .scroll-button svg {
-      width: 20px;
-      height: 20px;
-    }
-  }  
+  .mobile-nav .dropdown .dropdown-content a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    padding: 13px 14px;
+    border-radius: 7px;
+    color: #2a3b5f;
+    background: white;
+  }
+
+  .mobile-nav .dropdown .dropdown-content a:hover,
+  .mobile-nav .dropdown .dropdown-content a:active {
+    background-color: #2a3b5f;
+    color: white;
+  }
+
+  .contact-section {
+    display: none;
+  }
+
+  .hero {
+    height: 420px;
+    padding-top: 70px;
+  }
+
+  .background-image {
+    background-size: 300px auto;
+  }
+
+  .hero-logo img {
+    width: 95px !important;
+  }
+
+  .section {
+    padding: 38px 16px;
+  }
+
+  .business-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 22px 18px;
+  }
+
+  .card-image img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-info {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .signature {
+    width: 150px;
+    align-self: center;
+  }
+
+  .info-section {
+    padding: 38px 16px;
+  }
+
+  .info-section h2 {
+    font-size: 27px;
+  }
+
+  .info-section .info-box {
+    max-width: 100%;
+    margin: 12px 0;
+    padding: 22px;
+  }
+
+  .meet-kesia-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 16px 40px;
+  }
+
+  .meet-kesia-section .image-box {
+    max-width: 100%;
+    padding: 22px;
+  }
+
+  .meet-kesia-section .image-box h3 {
+    font-size: 22px;
+  }
+
+  .meet-kesia-section .image-box p {
+    font-size: 16px;
+  }
+
+  .scroll-button {
+    bottom: 12px;
+    right: 12px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .scroll-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}

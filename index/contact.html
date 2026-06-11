@@ -5,24 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Real Estate Solutions 302</title>
+
     <link rel="stylesheet" href="contact.css?v=3">
-    <link rel="icon" href="/assets/images/logo.png" type="image/png"> <!-- Favicon Link -->
+    <link rel="icon" href="/assets/images/logo.png" type="image/png">
+
     <style>
-        /* Inline styles for the Not Yet Ready section */
         .not-ready {
             background-color: #f4f4f4;
-            /* Light background */
             padding: 40px 20px;
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
+            margin: 40px auto;
+            max-width: 1000px;
         }
 
         .not-ready h2 {
             font-size: 28px;
             color: #2a3b5f;
-            /* Matches the primary color */
             margin-bottom: 20px;
         }
 
@@ -42,31 +42,32 @@
         }
 
         .not-ready input {
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             width: 100%;
             max-width: 300px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-size: 16px;
         }
 
         .not-ready .input-group {
             display: flex;
             justify-content: space-between;
+            gap: 12px;
             width: 100%;
             max-width: 600px;
         }
 
         .not-ready .input-group input {
-            width: 48%;
-            /* 48% width to make them side by side */
+            width: 50%;
         }
 
         .not-ready button {
             background-color: #2a3b5f;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 22px;
+            border-radius: 6px;
             border: none;
             cursor: pointer;
             font-weight: bold;
@@ -78,7 +79,6 @@
             background-color: #1f2a4d;
         }
 
-        /* Footer Styles */
         footer {
             background-color: #2a3b5f;
             color: white;
@@ -87,10 +87,40 @@
             position: relative;
             width: 100%;
         }
+
+        @media (max-width: 768px) {
+            .not-ready {
+                margin: 30px 16px;
+                padding: 32px 18px;
+            }
+
+            .not-ready h2 {
+                font-size: 24px;
+            }
+
+            .not-ready p {
+                font-size: 16px;
+            }
+
+            .not-ready .input-group {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .not-ready .input-group input {
+                width: 100%;
+                max-width: none;
+            }
+
+            .not-ready button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
+
     <!-- ✅ DESKTOP NAV -->
     <header class="desktop-nav">
         <div class="nav-scroll-wrapper">
@@ -120,7 +150,7 @@
         </div>
     </header>
 
-    <!-- ✅ MOBILE-ONLY NAV -->
+    <!-- ✅ MOBILE NAV -->
     <header class="mobile-nav">
         <div class="nav-scroll-wrapper">
             <nav>
@@ -159,6 +189,7 @@
     <!-- Photo Gallery -->
     <section class="gallery">
         <h2>Client Gallery</h2>
+
         <div class="gallery-grid">
             <img src="/assets/images/r1 (1).jpg" alt="Client 1">
             <img src="/assets/images/r1 (3).jpg" alt="Client 2">
@@ -173,10 +204,12 @@
     <section class="schedule">
         <h2>Schedule a Zoom Consultation</h2>
         <p class="small-text">Please select three of the best dates and times that work best for you!</p>
+
         <form id="contact-form">
             <div class="calendar-container">
                 <label for="appointmentDate1">Choose Day 1:</label>
                 <input type="date" id="appointmentDate1" name="appointmentDate1" required>
+
                 <select id="appointmentTime1" name="appointmentTime1" required>
                     <option value="">Select a Time</option>
                     <option value="08:00">8:00 AM</option>
@@ -196,6 +229,7 @@
 
                 <label for="appointmentDate2">Choose Day 2:</label>
                 <input type="date" id="appointmentDate2" name="appointmentDate2" required>
+
                 <select id="appointmentTime2" name="appointmentTime2" required>
                     <option value="">Select a Time</option>
                     <option value="08:00">8:00 AM</option>
@@ -215,6 +249,7 @@
 
                 <label for="appointmentDate3">Choose Day 3:</label>
                 <input type="date" id="appointmentDate3" name="appointmentDate3" required>
+
                 <select id="appointmentTime3" name="appointmentTime3" required>
                     <option value="">Select a Time</option>
                     <option value="08:00">8:00 AM</option>
@@ -240,8 +275,12 @@
             </div>
 
             <button type="submit">Submit</button>
-            <p id="success-message" style="display: none; color: green;">Thank you for contacting us! Kesia will reach
-                out via email within 24 hours to confirm your Zoom consultation.</p>
+
+            <p id="success-message" style="display: none; color: green;">
+                Thank you for contacting us! Kesia will reach out via email within 24 hours to confirm your Zoom
+                consultation.
+            </p>
+
             <div id="form-status" style="margin-top: 10px; color: green;"></div>
         </form>
     </section>
@@ -250,18 +289,21 @@
     <section class="not-ready">
         <h2>Not yet ready to start your home buying journey?</h2>
         <p>Subscribe to our newsletter <b>Beyond The Door</b> to stay well informed step by step!</p>
+
         <form id="newsletter-form">
             <div class="input-group">
                 <input type="text" id="newsletter-name" name="name" placeholder="Your Name" required>
                 <input type="email" id="newsletter-email" name="email" placeholder="Your Email" required>
             </div>
+
             <button type="submit">Subscribe</button>
-            <p id="newsletter-success" style="display: none; color: green;">Thank you for subscribing! You'll stay
-                updated until you're ready to start your journey.</p>
+
+            <p id="newsletter-success" style="display: none; color: green;">
+                Thank you for subscribing! You'll stay updated until you're ready to start your journey.
+            </p>
         </form>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Move With Kesia DE. All Rights Reserved.</p>
     </footer>
@@ -269,19 +311,18 @@
     <!-- Scroll Button -->
     <button class="scroll-button" id="scrollButton" aria-label="Scroll">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" /> <!-- Downward Arrow -->
+            <path id="scrollIcon" d="M12 19l-7-7h14l-7 7z" />
         </svg>
     </button>
 
-    <!-- Script for handling form submission -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const form = document.getElementById('contact-form');
             const successMessage = document.getElementById('success-message');
-            const formspreeUrl = 'https://formspree.io/f/xanqboea'; // Formspree link
+            const formspreeUrl = 'https://formspree.io/f/xanqboea';
 
             form.addEventListener('submit', async (e) => {
-                e.preventDefault(); // Prevent default form submission
+                e.preventDefault();
 
                 const formData = new FormData(form);
 
@@ -295,10 +336,9 @@
                     });
 
                     if (response.ok) {
-                        successMessage.style.display = 'block'; // Show success message
-                        form.reset(); // Clear the form inputs
+                        successMessage.style.display = 'block';
+                        form.reset();
 
-                        // Hide success message after 12 seconds
                         setTimeout(() => {
                             successMessage.style.display = 'none';
                         }, 12000);
@@ -311,13 +351,12 @@
                 }
             });
 
-            // Newsletter Form Handling
             const newsletterForm = document.getElementById('newsletter-form');
             const newsletterSuccess = document.getElementById('newsletter-success');
-            const newsletterFormspreeUrl = 'https://formspree.io/f/xovjldno'; // Newsletter Formspree link
+            const newsletterFormspreeUrl = 'https://formspree.io/f/xovjldno';
 
             newsletterForm.addEventListener('submit', async (e) => {
-                e.preventDefault(); // Prevent default form submission
+                e.preventDefault();
 
                 const newsletterData = new FormData(newsletterForm);
 
@@ -331,10 +370,9 @@
                     });
 
                     if (response.ok) {
-                        newsletterSuccess.style.display = 'block'; // Show success message
-                        newsletterForm.reset(); // Clear the form inputs
+                        newsletterSuccess.style.display = 'block';
+                        newsletterForm.reset();
 
-                        // Hide success message after 12 seconds
                         setTimeout(() => {
                             newsletterSuccess.style.display = 'none';
                         }, 12000);
@@ -342,7 +380,7 @@
                         alert('There was an issue submitting the form. Please try again.');
                     }
                 } catch (error) {
-                    console.error('Error submitting the form:', error);
+                    console.error('Error submitting the newsletter form:', error);
                     alert('An error occurred while submitting the form. Please try again.');
                 }
             });
@@ -350,36 +388,56 @@
     </script>
 
     <script>
-        // Scroll Button Functionality
         const scrollButton = document.getElementById('scrollButton');
         const scrollIcon = document.getElementById('scrollIcon');
 
         function updateButtonIcon() {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                // At the bottom
-                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z'); // Upward Arrow
+                scrollIcon.setAttribute('d', 'M12 5l7 7H5l7-7z');
                 scrollButton.setAttribute('aria-label', 'Scroll to Top');
             } else {
-                // At the top or scrolling
-                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z'); // Downward Arrow
+                scrollIcon.setAttribute('d', 'M12 19l-7-7h14l-7 7z');
                 scrollButton.setAttribute('aria-label', 'Scroll to Bottom');
             }
         }
 
         scrollButton.addEventListener('click', () => {
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
-                // Scroll to the top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
-                // Scroll to the bottom
                 window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
             }
         });
 
         window.addEventListener('scroll', updateButtonIcon);
-
-        // Initial update for icon
         updateButtonIcon();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileDropdownButtons = document.querySelectorAll(
+                ".mobile-nav .dropdown > .dropbtn"
+            );
+
+            mobileDropdownButtons.forEach(button => {
+                button.addEventListener("click", function (e) {
+                    const dropdown = this.parentElement;
+                    const submenu = dropdown.querySelector(".dropdown-content");
+
+                    if (!submenu) return;
+
+                    e.preventDefault();
+
+                    document.querySelectorAll(".mobile-nav .dropdown").forEach(item => {
+                        if (item !== dropdown) {
+                            item.classList.remove("active");
+                        }
+                    });
+
+                    dropdown.classList.toggle("active");
+                });
+            });
+        });
     </script>
 
 </body>
