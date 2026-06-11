@@ -2,7 +2,6 @@
    RAW STORY / NEW CONSTRUCTION PAGE
 ================================ */
 
-/* Hero Section */
 .project-hero {
   background: linear-gradient(to right, #2a3b5f, #1e2a44);
   color: white;
@@ -67,13 +66,14 @@
 .hero-image {
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .hero-image img {
   width: 100%;
-  height: 390px;
+  height: 430px;
   object-fit: cover;
+  object-position: center 68%;
   display: block;
 }
 
@@ -305,39 +305,44 @@
   line-height: 1.5;
 }
 
-/* Video Section */
-.fb-video-section {
+/* Construction Video */
+.construction-video-section {
   text-align: center;
-  padding: 60px 20px;
+  padding: 55px 20px;
   background-color: #f7f9fc;
 }
 
-.fb-video-section h2 {
+.construction-video-section h2 {
   font-size: 30px;
   color: #2a3b5f;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.fb-video-section p {
+.construction-video-section p {
+  max-width: 760px;
+  margin: 0 auto 28px;
   font-size: 17px;
   color: #444;
-  margin-bottom: 28px;
+  line-height: 1.6;
 }
 
-.fb-video-fixed {
+.construction-video-wrapper {
   width: 100%;
-  max-width: 560px;
+  max-width: 520px;
+  max-height: 620px;
   margin: 0 auto;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
 }
 
-.fb-video-fixed iframe {
+.construction-video-wrapper video {
   width: 100%;
-  height: 555px;
-  border: none;
+  max-height: 620px;
   display: block;
+  object-fit: contain;
+  background: #000;
 }
 
 /* Map Section */
@@ -415,7 +420,6 @@
   border: 1px solid #cfcfcf;
   border-radius: 7px;
   font-size: 16px;
-  box-sizing: border-box;
 }
 
 .form-row input:focus,
@@ -494,17 +498,17 @@
   }
 
   .hero-image img {
-    height: 245px;
+    height: 335px;
+    object-position: center 72%;
   }
 
   .hero-btn {
     width: 100%;
-    box-sizing: border-box;
   }
 
   .section,
   .map-section,
-  .fb-video-section,
+  .construction-video-section,
   .interest-form {
     padding: 42px 16px;
   }
@@ -515,13 +519,13 @@
 
   .section h2,
   .map-section h2,
-  .fb-video-section h2 {
+  .construction-video-section h2 {
     font-size: 25px;
   }
 
   .section p,
   .map-section p,
-  .fb-video-section p {
+  .construction-video-section p {
     font-size: 16px;
   }
 
@@ -536,6 +540,10 @@
 
   .home-card h3 {
     font-size: 20px;
+  }
+
+  .home-specs {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .amenities-list {
@@ -559,10 +567,18 @@
     height: 230px;
   }
 
+  .construction-video-wrapper {
+    max-width: 100%;
+    max-height: 520px;
+  }
+
+  .construction-video-wrapper video {
+    max-height: 520px;
+  }
+
   .interest-form-container {
     width: 100%;
     padding: 24px 18px;
-    box-sizing: border-box;
   }
 
   .form-row input,
@@ -575,20 +591,6 @@
     width: 100%;
     font-size: 15px;
     padding: 13px;
-  }
-
-  .fb-video-fixed {
-    position: relative;
-    width: 100%;
-    padding-top: 85%;
-    height: 0;
-  }
-
-  .fb-video-fixed iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
   }
 
   .map-wrapper iframe {
